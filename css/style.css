@@ -1,0 +1,46 @@
+/*font-family: 'Josefin Sans', sans-serif;
+font-family: 'Yeseva One', cursive;*/
+
+*{
+    font-family: 'Yeseva One', cursive;
+    padding: 0px;
+}
+
+.baseBody{
+    background-color: #FFE5EC;
+    margin: 0px; /*esse é o trecho que se livra da brecha que tinha entre a navbar e o topo da página*/
+}
+
+.logo{
+    font-family: 'Josefin Sans', sans-serif;
+    
+}
+
+.colorMenuButton{
+    border-radius: 12px;
+    padding: 8px;
+    background-color: #FFE5EC;
+    color: #FB6F92;
+    color: color: #fafafa;
+    margin: 0 700px; /*empurra o logo e o ícone*/
+    border: none;
+}
+
+/*Barra de navegação que contém o logo, o ícone e o botão de menu de mudança de cor*/
+.navbar{
+    background-color: #FFB3C6;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+}
+
+
+/*Grupo do logo e icon*/
+.logoIcon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 700px;/*empurra o botão de cor*/
+    color: #fafafa;
+}
