@@ -61,3 +61,26 @@ font-family: 'DM Sans', sans-serif;*/
     flex-direction: row;
     justify-content: space-evenly;
 }
+
+.colorMenu{
+    background-color: #fff;
+    position: fixed;
+    top:0;
+    right: 0;
+    height: 100vh;
+    width: 150px;
+    text-align: center;
+    padding: 20px;
+}
+
+.colors{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: right;
+    flex-direction: column;
+    gap:1.5px;
+}
+
+.fa-light-fa-xmark{
+    
+}
