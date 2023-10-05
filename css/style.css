@@ -1,8 +1,9 @@
 /*font-family: 'Josefin Sans', sans-serif;
-font-family: 'Yeseva One', cursive;*/
+font-family: 'Yeseva One', cursive;
+font-family: 'DM Sans', sans-serif;*/
 
 *{
-    font-family: 'Yeseva One', cursive;
+    font-family: 'DM Sans', sans-serif;
     padding: 0px;
 }
 
@@ -17,12 +18,12 @@ font-family: 'Yeseva One', cursive;*/
 }
 
 .colorMenuButton{
-    border-radius: 12px;
+    border-radius: 11px;
     padding: 8px;
     background-color: #FFE5EC;
     color: #FB6F92;
     color: color: #fafafa;
-    margin: 0 700px; /*empurra o logo e o ícone*/
+    margin: 0 660px; /*empurra o logo e o ícone*/
     border: none;
 }
 
@@ -41,6 +42,22 @@ font-family: 'Yeseva One', cursive;*/
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 700px;/*empurra o botão de cor*/
+    margin: 0 660px;/*empurra o botão de cor*/
     color: #fafafa;
+}
+
+.toDoColumn, .doingColumn, .doneColumn{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    background-color:rgb(255, 253, 246);
+    padding: 9px;
+    height: 500px;
+    border-radius: 8px;
+}
+
+.columns{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
 }

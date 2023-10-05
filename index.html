@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Yeseva+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300&display=swap" rel="stylesheet">
     <!-- Link para o fontawesome kit -->
     <script src="https://kit.fontawesome.com/0b76d30dd2.js" crossorigin="anonymous"></script>
     <!-- Link para o Remixicon kit -->
@@ -22,7 +23,31 @@
             <i class="ri-home-smile-line ri-xl"></i>
             <h1 class="logo">Trekko</h1>
         </nav>
-        <button class="colorMenuButton"><i class="fa-solid fa-palette"></i></button>
+        <button class="colorMenuButton" action=""><i class="fa-solid fa-palette"></i></button>
     </header>
+
+    <div class="columns">
+        <form class="toDoColumn">
+            <label class="columnTitle">To do</label>
+            <input type="text" placeholder="Título da tarefa"></input>
+            <textarea class="taskDescription" placeholder="Descrição da Tarefa"></textarea>
+            <button type="submit" class="submitButton">Submit</button>
+        </form>
+
+        <form class="doingColumn">
+            <label class="columnTitle">Doing</label>
+            <input type="text" placeholder="Título da tarefa"></input>
+            <textarea class="taskDescription" placeholder="Descrição da Tarefa"></textarea>
+            <button type="submit" class="submitButton">Submit</button>
+        </form>
+
+        <form class="doneColumn">
+            <label class="columnTitle">Done</label>
+            <input type="text" placeholder="Título da tarefa"></input>
+            <textarea class="taskDescription" placeholder="Descrição da Tarefa"></textarea>
+            <button type="submit" class="submitButton">Submit</button>
+        </form>
+    </div>
+<script src="myscripts.js"></script>
 </body>
 </html>
