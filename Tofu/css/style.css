@@ -1,0 +1,182 @@
+/*Texto para chamada das fontes
+font-family: 'DM Sans', sans-serif;
+font-family: 'DM Serif Display', serif;*/
+@import url('https://fonts.googleapis.com/css2?family=Righteous&family=Sarala:wght@400;700&display=swap');
+
+/* :root {
+    --main-color: #FDFCDC;
+    --bg: #fff;
+    --border: 1px solid;
+    --box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+} */
+
+* {
+
+    font-family: 'DM Sans', sans-serif;
+    margin: 0;
+}
+
+/*Altera o titulo da página */
+.navegation-bar {
+    display: flex;
+    align-items: center;
+    /* gap: 820px; */
+    overflow: hidden;
+    background-color: #fd81a0;
+    height: 45px;
+    justify-content: flex-start;
+    gap: 80%;
+}
+.title {
+    font-family: 'Righteous', cursive;
+    outline: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: .2s linear;
+    color: #ffebeb;
+}
+
+.title-color {
+    font-family: system-ui;
+    outline: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: .2s linear;
+}
+
+/*Altera as definições do menu de cores */
+.color-menu {
+    background-color: #ffffff;
+    position: fixed;
+    top: 0;
+    right: 0;
+    border-left: var;
+    height: 100vh;
+    width: 100px;
+    z-index: 1000;
+    text-align: center;
+    padding: 20px;
+}
+
+/*Altera o botão de paleta de cores */
+.botao {
+    background: #afd46e;
+    color: #202020;
+    border: 1px solid #f5f8271c;
+    border-radius: 20px;
+    box-shadow: 1px 1px 1px #c9bdbd;
+    height: 30px;
+    text-shadow: none;
+    cursor: pointer;
+}
+
+.botao:hover {
+    background: #C2ED77;
+    color: #202020;
+    border: 1px solid #f5f8271c;
+    border-radius: 20px;
+    box-shadow: 1px 1px 1px #c9bdbd;
+    text-shadow: none;
+}
+
+/* .menu-close{
+    padding-top: 10px;
+} */
+
+.colour-menu .colors-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 1.5px;
+    
+}
+
+.color-menu .colors-list .color {
+    border-radius: 5px;
+    height: 50px;
+    width: 50px;
+    cursor: pointer;
+    border: solid 0.5px #2020204b;
+}
+
+.color-menu .colors-list .color:hover {
+    opacity: .5;
+}
+
+
+.menu-hidden {
+    display: none;
+}
+
+.conteudo {
+    margin-bottom: 48px;
+    border-top: 0.4px solid #0000008c;
+}
+
+#color-input {
+    height: 0px;
+    width: 0px;
+    padding: 50px 50px 0px 0px;
+    background-image: url("rainbow.png");
+    background-size: 50px 50px;
+    border-radius: 5px;
+    border: solid 0.5px #636363;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    margin: 10px;
+    border: solid 1px #636363;
+    gap: 10px;
+    background-color: #f3f0f0;
+    border-radius: 3%;
+
+}
+.column-form{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    margin: 10px;
+    border: solid 1px #636363;
+    gap: 10px;
+    background-color: #fcfcfc;
+    border-radius: 3%;
+}
+
+.tasks {
+
+}
+
+.column-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.button-add {
+    border-radius: 16px;
+    cursor: pointer;
+
+}
+
+.button-add:hover {
+    background-color: #ffaaaa;
+    color: #fff;
+    
+}
+
+li{
+    display: flex;
+    border: solid 0.5px #5f5f5f;
+    border-radius: 5px;
+    padding: 10%;
+    margin: 5%;
+    background-color: #ffffff;
+}

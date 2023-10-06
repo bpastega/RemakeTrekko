@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--link para página de style -->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <!-- links googlefonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,100&family=DM+Serif+Display&display=swap"
+        rel="stylesheet">
+    <!-- link fontawesome kit -->
+    <link rel="shortcut icon" href="img/icons8-casa-16.png" type="image/x-icon">
+    <!-- icons8 site de icons para devs -->
+    <script src="https://kit.fontawesome.com/0b76d30dd2.js" crossorigin="anonymous"></script>
+    <title>Trekko</title>
+</head>
+
+<body>
+    <header>
+        <div class="navegation-bar">
+            <h1 class="title">TREKKO</h1>
+            <button class="botao">
+                <div id="menu-close" class="fa-solid fa-fill-drip"></i></div>
+            </button>
+            <div class="color-menu menu-hidden">
+                <h3 class="title-color">Color Picker</h3>
+                <div class="colors-list">
+                    <!--Alt cores do background -->
+                    <div class="color" style="background:#FDFCDC;"></div>
+                    <div class="color" style="background:#F07167;"></div>
+                    <div class="color" style="background:#00ecec;"></div>
+                    <div class="color" style="background:#0081A7;"></div>
+                    <div class="color" style="background:#2fbb2f;"></div>
+                    <div class="color" style="background:#b3bd30;"></div>
+                    <div class="color" style="background:#005300;"></div>
+                    <div class="color" style="background:#440044;"></div>
+                    <div class="color" style="background:#ff0000;"></div>
+                    <div class="color">
+                        <input type="color" id="color-input">
+                    </div>
+                </div>
+    </header>
+
+    <div class="container">
+        <div class="column" id="to-do" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <h2>To do</h2>
+
+            <div id="todo-task" class="tasks" ondrop="drop(event)" ondragover="allowDrop(event)">
+            </div>
+
+
+            <form class="column-form">
+
+                <label for="to-do-tasks-name">Name</label>
+                <input type="text" id="todo-task-name" required>
+
+
+                <label for="todo-task-description">Description</label>
+                <textarea style="resize: none" id="todo-task-description"></textarea>
+
+                <button class="button-add" type="button" onclick="addTask('todo')">Add Task</button>
+
+            </form>
+        </div>
+        <div class="column" id="doing" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <h2>Doing</h2>
+
+            <div id="doing-task" class="tasks" ondrop="drop(event)" ondragover="allowDrop(event)">
+            </div>
+
+
+            <form class="column-form">
+
+                <label for="doing-task-name">Name</label>
+                <input type="text" id="doing-task-name" required>
+
+
+                <label for="doing-task-description">Description</label>
+                <textarea style="resize: none" id="doing-task-description"></textarea>
+
+                <button class="button-add" type="button" onclick="addTask('doing')">Add Task</button>
+
+            </form>
+        </div>
+
+        <div class="column" id="done" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <h2>Done</h2>
+
+            <div id="done-task" class="tasks" ondrop="drop('event')" ondragover="allowDrop(event)"></div>
+
+
+            <form class="column-form">
+                <label for="done-task-name">Name</label>
+                <input type="text" id="done-task-name" required>
+
+                <label for="done-task-description">Description</label>
+                <textarea style="resize: none" id="done-task-description"></textarea>
+
+                <button class="button-add" type="button" onclick="addTask('done')">Add Task</button>
+
+            </form>
+        </div>
+    </div>
+
+    <!--link do arquivo js -->
+    <script src="/Trekko/js/script.js"></script>
+</body>
+
+</html>
