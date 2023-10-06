@@ -81,6 +81,11 @@ font-family: 'DM Sans', sans-serif;*/
     gap:1.5px;
 }
 
-.fa-light-fa-xmark{
-    
+.colorBox i:hover{
+    filter: brightness(70%);
+}
+
+.closecolorMenu{
+    display: flex;
+    margin: 0;
 }
