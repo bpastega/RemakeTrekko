@@ -69,7 +69,7 @@ function addTask(columnId) {
         taskContent.className = "taskContent";
 
         taskContent.appendChild(document.createTextNode(taskText)); // Nome da tarefa
-        taskContent.appendChild(document.createElement("br")); // Quebra de linha
+        taskContent.appendChild(document.createElement("hr")); // Quebra de linha
         taskContent.appendChild(document.createTextNode(taskDescriptionIn)); // Descrição da tarefa
 
         newTaskItem.appendChild(taskContent);
