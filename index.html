@@ -23,7 +23,7 @@
             <i class="ri-home-smile-line ri-xl"></i>
             <h1 class="logo">Trekko</h1>
         </nav>
-        <button class="colorMenuButton" onclick=""><i class="fa-solid fa-palette"></i></button>
+        <button class="colorMenuButton" id="OpenColors" onclick=""><i class="fa-solid fa-palette"></i></button>
     </header>
 
     <div class="columns">
@@ -49,7 +49,7 @@
         </form>
     </div>
 
-    <div class="colorMenu">
+    <div class="colorMenu" id="colorMenu">
             <div class="colorlist">
                     <div class="colorBox">
                         <i class="ri-square-fill ri-3x"  style="color:#FFE5D9;"></i>
@@ -59,8 +59,8 @@
                         <i class="ri-square-fill ri-3x"  style="color:#9D8189;"></i>
                     </div>
             </div>
-            <div class="close">
-                <i class="fa-solid fa-xmark" class="closecolorMenu"></i> 
+            <div class="closeSymbol">
+                <i class="fa-solid fa-xmark" id="x-symbol"></i> 
             </div>
     </div>
 

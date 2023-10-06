@@ -85,7 +85,12 @@ font-family: 'DM Sans', sans-serif;*/
     filter: brightness(70%);
 }
 
-.closecolorMenu{
+.closeSymbol{
+    color: #FB6F92;
+    position: relative;
+    left: 140px;
+    bottom: 160px;
     display: flex;
     margin: 0;
 }
+
