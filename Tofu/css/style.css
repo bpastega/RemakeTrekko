@@ -137,7 +137,7 @@ font-family: 'DM Serif Display', serif;*/
     border: solid 1px #636363;
     gap: 10px;
     background-color: #f3f0f0;
-    border-radius: 3%;
+    border-radius: 2vh;
 
 }
 .column-form{
@@ -148,7 +148,7 @@ font-family: 'DM Serif Display', serif;*/
     border: solid 1px #636363;
     gap: 10px;
     background-color: #fcfcfc;
-    border-radius: 3%;
+    border-radius: 2vh;
 }
 
 .column-content {
@@ -176,7 +176,9 @@ font-family: 'DM Serif Display', serif;*/
     margin: 1%;
     background-color: #ffffff;
 } */
-.taskContent{}
+.taskContent{
+    
+}
 
 .taskItem{
     display: flex;
@@ -186,4 +188,8 @@ font-family: 'DM Serif Display', serif;*/
     margin: 1%;
     background-color: #ffffff;
     font-weight: 600;
+}
+.taskItem:hover{
+    background-color: #ebd0d7b0;
+    cursor: pointer;
 }
