@@ -61,12 +61,22 @@ function addTask(columnId) {
     }
     
 
-    // const newTaskItem = document.createElement(taskText, taskDescriptionIn);
-
         const newTaskItem = document.createElement("li");
         newTaskItem.className = "taskItem";
+    
 
-        newTaskItem.appendChild(document.createTextNode(taskText));  // why textnode?
+        const taskContent = document.createElement("div");
+        taskContent.className = "taskContent";
+
+        taskContent.appendChild(document.createTextNode(taskText)); // Nome da tarefa
+        taskContent.appendChild(document.createElement("br")); // Quebra de linha
+        taskContent.appendChild(document.createTextNode(taskDescriptionIn)); // Descrição da tarefa
+
+        newTaskItem.appendChild(taskContent);
         document.getElementById(`${columnId}-task`).appendChild(newTaskItem);
+
+
+        // newTaskItem.appendChild(document.createTextNode(taskText));  // why textnode?
+        // document.getElementById(`${columnId}-task`).appendChild(newTaskItem);
          
 }
