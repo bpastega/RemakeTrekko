@@ -1,86 +1,82 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--link para página de style -->
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <!-- links googlefonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,100&family=DM+Serif+Display&display=swap"
-        rel="stylesheet">
-    <!-- link fontawesome kit -->
-    <link rel="shortcut icon" href="img/icons8-casa-16.png" type="image/x-icon">
-    <!-- icons8 site de icons para devs -->
-    <script src="https://kit.fontawesome.com/0b76d30dd2.js" crossorigin="anonymous"></script>
     <title>Trekko</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="img/icons8-casa-16.png" type="image/x-icon">
+    <script src="js/script.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Yeseva+One&display=swap" rel="stylesheet">
 </head>
 
 <body>
     <header>
-        <div class="navegation-bar">
-            <h1 class="title">TREKKO</h1>
-            <button class="botao">
-                <div id="menu-close" class="fa-solid fa-fill-drip"></i></div>
-            </button>
-            <div class="color-menu menu-hidden">
-                <h3 class="title-color">Color Picker</h3>
-                <div class="colors-list">
-                    <!--Alt cores do background -->
-                    <div class="color" style="background:#FDFCDC;"></div>
-                    <div class="color" style="background:#F07167;"></div>
-                    <div class="color" style="background:#00ecec;"></div>
-                    <div class="color" style="background:#0081A7;"></div>
-                    <div class="color" style="background:#2fbb2f;"></div>
-                    <div class="color" style="background:#b3bd30;"></div>
-                    <div class="color" style="background:#005300;"></div>
-                    <div class="color" style="background:#440044;"></div>
-                    <div class="color" style="background:#ff0000;"></div>
-                    <div class="color">
-                        <input type="color" id="color-input">
-                    </div>
-                </div>
-    </header>
+        <ul class="menu">
 
+            <li><i class="ri-home-smile-line ri-xl"></i>
+                <h1>Trekko</h1>
+            </li>
+            <!-- <li> <a href='/'>Home</a></li>
+            <li><a href='/'>Portfolio</a></li> -->
+
+
+            <li>Background Color<button class="colorMenuButton" id="OpenColors" onclick=""><i
+                        class="fa-solid fa-palette"></i>
+                    <div class="dropdown">
+                        <h2>Pick a Color</h2>
+                        <!-- <a href="/">Color A</a>
+                <a href="/">Color B</a>
+                <a href="/">Color C</a>
+                <a href="/">Color D</a>
+                <a href="/">Color E</a> -->
+                        <i class="ri-square-fill ri-3x" style="color:#FFE5D9;" onclick="ChangeBG('#FFE5D9')"></i>
+                        <i class="ri-square-fill ri-3x" style="color:#FFCAD4;" onclick="ChangeBG('#FFCAD4')"></i>
+                        <i class="ri-square-fill ri-3x" style="color:#F4ACB7;" onclick="ChangeBG('#F4ACB7')"></i>
+                        <i class="ri-square-fill ri-3x" style="color:#D8E2DC;" onclick="ChangeBG('#D8E2DC')"></i>
+                        <i class="ri-square-fill ri-3x" style="color:#9D8189;" onclick="ChangeBG('#9D8189')"></i>
+                        <i class="ri-square-fill ri-3x" style="color:#FFE5EC;" onclick="ChangeBG('#FFE5EC')"></i>
+                        <i class="ri-square-fill ri-3x" style="color:#FFC2D1;" onclick="ChangeBG('#FFC2D1')"></i>
+                        <i class="ri-square-fill ri-3x" style="color:#FFB3C6;" onclick="ChangeBG('#FFB3C6')"></i>
+                        <i class="ri-square-fill ri-3x" style="color:#FF8FAB;" onclick="ChangeBG('#FF8FAB')"></i>
+                        <i class="ri-square-fill ri-3x" style="color:#FB6F92;" onclick="ChangeBG('#FB6F92')"></i>
+                </button>
+                </div>
+            </li>
+            <!-- <li><a href="/">About</a></li>
+            <li><a href="/">Contact</a></li> -->
+        </ul>
+    </header>
+    <!-- COLUMNS -->
     <div class="container">
         <div class="column" id="to-do" ondrop="drop(event)" ondragover="allowDrop(event)">
             <h2>To do</h2>
-
             <div id="todo-task" class="tasks" ondrop="drop(event)" ondragover="allowDrop(event)">
             </div>
-
-
             <form class="column-form">
-
                 <label for="to-do-tasks-name">Name</label>
-                <input type="text" id="todo-task-name" required>
+                <input type="text" id="todo-task-name" placeholder="Add task title" required>
 
 
                 <label for="todo-task-description">Description</label>
-                <textarea style="resize: none" id="todo-task-description"></textarea>
+                <textarea style="resize: none" id="todo-task-description" placeholder="Add task description" ></textarea>
 
                 <button class="button-add" type="button" onclick="addTask('todo')">Add Task</button>
-
             </form>
         </div>
+
         <div class="column" id="doing" ondrop="drop(event)" ondragover="allowDrop(event)">
             <h2>Doing</h2>
-
             <div id="doing-task" class="tasks" ondrop="drop(event)" ondragover="allowDrop(event)">
             </div>
-
-
             <form class="column-form">
 
                 <label for="doing-task-name">Name</label>
-                <input type="text" id="doing-task-name" required>
-
-
+                <input type="text" id="doing-task-name" placeholder="Add task title" required>
                 <label for="doing-task-description">Description</label>
-                <textarea style="resize: none" id="doing-task-description"></textarea>
+                <textarea style="resize: none" id="doing-task-description" placeholder="Add task description" ></textarea>
 
                 <button class="button-add" type="button" onclick="addTask('doing')">Add Task</button>
 
@@ -90,24 +86,19 @@
         <div class="column" id="done" ondrop="drop(event)" ondragover="allowDrop(event)">
             <h2>Done</h2>
 
-            <div id="done-task" class="tasks" ondrop="drop('event')" ondragover="allowDrop(event)"></div>
-
-
+            <div id="done-task" class="tasks" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
             <form class="column-form">
                 <label for="done-task-name">Name</label>
-                <input type="text" id="done-task-name" required>
+                <input type="text" id="done-task-name" placeholder="Add task title" required>
 
                 <label for="done-task-description">Description</label>
-                <textarea style="resize: none" id="done-task-description"></textarea>
+                <textarea style="resize: none" id="done-task-description" placeholder="Add task description"></textarea>
 
                 <button class="button-add" type="button" onclick="addTask('done')">Add Task</button>
 
             </form>
         </div>
     </div>
-
-    <!--link do arquivo js -->
-    <script src="js/script.js"></script>
 </body>
 
 </html>

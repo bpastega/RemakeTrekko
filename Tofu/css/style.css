@@ -1,130 +1,114 @@
-/*Texto para chamada das fontes
-font-family: 'DM Sans', sans-serif;
-font-family: 'DM Serif Display', serif;*/
-@import url('https://fonts.googleapis.com/css2?family=Righteous&family=Sarala:wght@400;700&display=swap');
-
-/* :root {
-    --main-color: #FDFCDC;
-    --bg: #fff;
-    --border: 1px solid;
-    --box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-} */
-
-* {
-
-    font-family: 'DM Sans', sans-serif;
-    margin: 0;
-}
-
-/*Altera o titulo da página */
-.navegation-bar {
-    display: flex;
-    align-items: center;
-    /* gap: 820px; */
-    overflow: hidden;
-    background-color: #fd81a0;
-    height: 45px;
-    justify-content: flex-start;
-    gap: 80%;
-}
-.title {
-    font-family: 'Righteous', cursive;
-    outline: none;
-    text-decoration: none;
-    text-transform: capitalize;
-    transition: .2s linear;
-    color: #ffebeb;
-}
-
-.title-color {
-    font-family: system-ui;
-    outline: none;
-    text-decoration: none;
-    text-transform: capitalize;
-    transition: .2s linear;
-}
-
-/*Altera as definições do menu de cores */
-.color-menu {
-    background-color: #ffffff;
-    position: fixed;
-    top: 0;
-    right: 0;
-    border-left: var;
-    height: 100vh;
-    width: 100px;
-    z-index: 1000;
-    text-align: center;
-    padding: 20px;
-}
-
-/*Altera o botão de paleta de cores */
-.botao {
-    background: #afd46e;
-    color: #202020;
-    border: 1px solid #f5f8271c;
-    border-radius: 20px;
-    box-shadow: 1px 1px 1px #c9bdbd;
-    height: 30px;
-    text-shadow: none;
-    cursor: pointer;
-}
-
-.botao:hover {
-    background: #C2ED77;
-    color: #202020;
-    border: 1px solid #f5f8271c;
-    border-radius: 20px;
-    box-shadow: 1px 1px 1px #c9bdbd;
-    text-shadow: none;
-}
-
-/* .menu-close{
-    padding-top: 10px;
-} */
-
-.colour-menu .colors-list {
+/* fonts later */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Righteous&family=Sarala:wght@400;700&display=swap');
+header{
+    width: 100%;
+    height: 60px;
+    padding: 0 40px;
+    box-sizing: border-box;
+    border: 1px solid #000000;
+    border-radius: 10px;
+    font-family: 'Josefin Sans', sans-serif;
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
-    flex-direction: column;
-    gap: 1.5px;
+    align-items: center;
+    background-color: #f7a6ba;
     
 }
 
-.color-menu .colors-list .color {
-    border-radius: 5px;
-    height: 50px;
-    width: 50px;
+.menu{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1100px;
+ 
+}
+
+li{
+    display: flex;
+    align-items: center;
+    height: 100%;
+    list-style: none;
+    position: relative;
+}
+.menu li{
+    text-decoration: none;
+    color: #ffffff;
+}
+.menu li:hover{
+    text-decoration: none;
+    color: #1a1a1a;
+}
+.menu h1{
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 200;
+    color: #ffffff;
+}
+.menu h2{
+    color: #363636;
+    
+}
+.menu i{
+    color: #fafafa;
+    font-size: 3.5vh;
+}
+
+.dropdown{
+    min-width: 130px;
+    padding: 15px 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: right;
+    gap: 12px;
+    position: absolute;
+    top: 40px;
+    border-radius: 8px;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 25px 50px -12px;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.2s ease-in-out;
+
+    height: 70vh;
+}
+
+li:hover .dropdown{
+    opacity: 1;
+    visibility: visible;
+    top: 60px;
+}
+
+.dropdown i{
+    font-size: 30px;
+    border-bottom: 1px solid #00000081;
+    padding-top: 5px;
+    text-decoration: none;
     cursor: pointer;
-    border: solid 0.5px #2020204b;
+
+}
+.dropdown i:hover{
+    filter: brightness(80%);
+}
+.colorMenuButton{
+    border-radius: 11px;
+    background-color: #fd90ad;
+    color: #FB6F92;
+    color: #fafafa;
+    border: none;
+}
+.colors{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: right;
+    flex-direction: column;
+    gap:1.5px;
 }
 
-.color-menu .colors-list .color:hover {
-    opacity: .5;
-}
-
-
-.menu-hidden {
-    display: none;
-}
-
-.conteudo {
-    margin-bottom: 48px;
-    border-top: 0.4px solid #0000008c;
-}
-
-#color-input {
-    height: 0px;
-    width: 0px;
-    padding: 50px 50px 0px 0px;
-    background-image: url("rainbow.png");
-    background-size: 50px 50px;
-    border-radius: 5px;
-    border: solid 0.5px #636363;
-}
-
+/* COLUNAS */
 .container {
+    font-family: 'Josefin Sans', sans-serif;
     display: flex;
     flex-direction: row;
 }
@@ -132,12 +116,17 @@ font-family: 'DM Serif Display', serif;*/
 .column {
     display: flex;
     flex-direction: column;
+    /* align-items: center; */
     padding: 10px;
     margin: 10px;
     border: solid 1px #636363;
     gap: 10px;
     background-color: #f3f0f0;
     border-radius: 2vh;
+    /* alinhando os titulos todo doing done no centro */
+    text-align: center;
+    /* height: 300px;
+    overflow-y: auto; */
 
 }
 .column-form{
@@ -148,7 +137,10 @@ font-family: 'DM Serif Display', serif;*/
     border: solid 1px #636363;
     gap: 10px;
     background-color: #fcfcfc;
-    border-radius: 2vh;
+    border-radius: 1vh;
+}
+input, textarea{
+    border-radius: 0.5vh;
 }
 
 .column-content {
@@ -157,7 +149,7 @@ font-family: 'DM Serif Display', serif;*/
 }
 
 .button-add {
-    border-radius: 16vh;
+    border-radius: 16px;
     cursor: pointer;
 
 }
@@ -168,15 +160,8 @@ font-family: 'DM Serif Display', serif;*/
     
 }
 
-/* li{
-    display: flex;
-    border: solid 0.5px #5f5f5f;
-    border-radius: 5px;
-    padding: 10%;
-    margin: 1%;
-    background-color: #ffffff;
-} */
 .taskContent{
+    font-weight: 200;
     
 }
 
@@ -184,12 +169,18 @@ font-family: 'DM Serif Display', serif;*/
     display: flex;
     border: solid 0.5px #5f5f5f;
     border-radius: 5px;
-    padding: 10%;
+    padding: 2vh;
     margin: 1%;
     background-color: #ffffff;
     font-weight: 600;
+
+    /* definindo o tamanho maximo q uma tarefa poderá ter */
+    max-height: 50px;
+    min-width: 80px;
+    overflow-y: auto;
 }
 .taskItem:hover{
     background-color: #ebd0d7b0;
     cursor: pointer;
 }
+

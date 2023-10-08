@@ -1,34 +1,22 @@
-document.addEventListener('DOMContentLoaded', function() {//
-    const colorMenu = document.querySelector('.color-menu');//cria a variável colorMenu para armazenar a seleção do usuário
-    const toggleButton = document.getElementById('menu-close');//faz a 
-    
-    
-toggleButton.addEventListener('click', function() {
-    colorMenu.classList.toggle('menu-hidden');//se clicar no botão, o menu será escondido no modo toggle
-});
+document.getElementById("OpenColors").onclick = 
 
-const colorList = document.querySelector('.colors-list');
-    
-colorList.addEventListener('click', function (event) {
-    const colorBox = event.target.closest('.color');
-        if (colorBox) {
-            const color = colorBox.style.backgroundColor;
-            document.body.style.backgroundColor = color;
-        }
-    });
+function OpenMenu() { 
+    document.getElementById("colorMenu").style.display = "initial"; 
+} 
 
+/*Função para fechar o menu de cores*/ 
+document.getElementById("x-symbol").onclick = 
 
-function changeBackgroundColor() {
-    const colorInput = document.getElementById("color-input");
-    const body = document.body;
+function CloseMenu() { 
+    document.getElementById("colorMenu").style.display = "none"; 
+} 
 
-    body.style.backgroundColor = colorInput.value;
+/*Função para mudar a cor do fundo*/
+function ChangeBG(cor){
+    document.body.style.backgroundColor = cor;
 }
 
-document.getElementById("color-input").addEventListener("input", changeBackgroundColor);
-});
-
-// AULA 05/10
+// COLUNAS
 function createTaskElement(taskName, taskDescription){
     const task = document.createElement('div');
     task.className = 'task';
