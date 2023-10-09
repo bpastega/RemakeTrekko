@@ -29,23 +29,23 @@
     <div class="columns">
         <form class="toDoColumn">
             <label class="columnTitle">A fazer</label>
-            <input type="text" placeholder="Título da tarefa"></input>
+            <input type="text" class="taskTitle" placeholder="Título da tarefa"></input>
             <textarea class="taskDescription" placeholder="Descrição da Tarefa"></textarea>
-            <button type="submit" class="submitButton">Submit</button>
+            <button type="submit" class="submitButton" id="todoSubmit" onclick="CreateTask(toDo)">Adicionar</button>
         </form>
 
         <form class="doingColumn">
             <label class="columnTitle">Fazendo</label>
-            <input type="text" placeholder="Título da tarefa"></input>
+            <input type="text" class="taskTitle" placeholder="Título da tarefa"></input>
             <textarea class="taskDescription" placeholder="Descrição da Tarefa"></textarea>
-            <button type="submit" class="submitButton">Submit</button>
+            <button type="submit" class="submitButton" id="doingSubmit" onclick="CreateTask(doing)">Adicionar</button>
         </form>
 
         <form class="doneColumn">
             <label class="columnTitle">Feito</label>
-            <input type="text" placeholder="Título da tarefa"></input>
+            <input type="text" class="taskTitle" placeholder="Título da tarefa"></input>
             <textarea class="taskDescription" placeholder="Descrição da Tarefa"></textarea>
-            <button type="submit" class="submitButton">Submit</button>
+            <button type="submit" class="submitButton" id="doneSubmit" onclick="CreateTask(doing)">Adicionar</button>
         </form>
     </div>
 

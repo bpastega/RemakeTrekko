@@ -16,3 +16,13 @@ function CloseMenu() {
 function ChangeBG(cor){
     document.body.style.backgroundColor = cor;
 }
+
+/*Função para criação de tarefa*/
+function CreateTask(column){
+
+}
+
+/*Função para deslocar tarefa*/
+function MoveTask(){
+    
+}
