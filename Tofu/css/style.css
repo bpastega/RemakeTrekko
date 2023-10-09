@@ -189,7 +189,7 @@ input, textarea{
     box-shadow: 0 1px 0 rgba(9, 30, 66, 0.25);
     margin-bottom: 8px;
     padding: 8px;
-    max-height: 80px;
+    max-height: 50px;
     min-width: 80px;
     overflow-y: auto;
     position: relative;
