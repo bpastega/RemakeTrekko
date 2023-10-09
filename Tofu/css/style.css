@@ -19,7 +19,7 @@ header{
     height: 100%;
     display: flex;
     align-items: center;
-    justify-content: center;
+    /* justify-content: space-evenly; */
     gap: 1100px;
  
 }
@@ -219,4 +219,36 @@ input, textarea{
     color: #FB6F92;
   }
 
-  
+  .theme-toggler{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+ .theme-toggler span{
+    color:var(--light-color);
+ } 
+.theme-toggler .toggler{
+    height: 40px;
+    width: 100px;
+    border-radius: 50px;
+    background:var(--light-bg);
+    position: relative;
+    cursor: pointer;
+    border:var(--border);
+    margin: 0 10px;
+
+}
+.theme-toggler .toggler::before{
+    content: '';
+    position: absolute;
+    top: 5px; left: 5px;
+    height: 28px;
+    width: 28px;
+    border-radius: 50%;
+    background: white;
+    transition: .2s linear;
+}
+.theme-toggler.active .toggler::before{
+    left: 65px;
+}

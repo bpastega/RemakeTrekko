@@ -84,3 +84,10 @@ function addTask(columnId) {
         // document.getElementById(`${columnId}-task`).appendChild(newTaskItem);
          
 }
+
+// mudar tema
+// let themeToggler = document.querySelector('.theme-toggler');
+
+// themeToggler.onclick = () =>{
+//     themeToggler.classList.toggle('active');
+// }
