@@ -50,7 +50,7 @@ function addTask(columnId) {
     
 
         const newTaskItem = document.createElement("li");
-        newTaskItem.className = "taskItem";
+        newTaskItem.className = "taskItem trello-card";
     
 
         const taskContent = document.createElement("div");
@@ -59,7 +59,23 @@ function addTask(columnId) {
         taskContent.appendChild(document.createTextNode(taskText)); // Nome da tarefa
         taskContent.appendChild(document.createElement("hr")); // Quebra de linha
         taskContent.appendChild(document.createTextNode(taskDescriptionIn)); // Descrição da tarefa
+       
+        // excluir tarefa
+        const deleteButton = document.createElement("button");
+        // deleteButton.innerHTML = "delete";
+        deleteButton.className = "deleteButton";
 
+        // adicionando o icon de lixeira
+        const icon = document.createElement("i");
+        icon.className = "ri-delete-bin-line";
+        deleteButton.appendChild(icon);
+
+        deleteButton.addEventListener("click", function() {
+            // quando o usuario clicar no X ira chamar a funçao excluir tarefa
+            newTaskItem.remove();
+        });
+
+        taskContent.appendChild(deleteButton);
         newTaskItem.appendChild(taskContent);
         document.getElementById(`${columnId}-task`).appendChild(newTaskItem);
 

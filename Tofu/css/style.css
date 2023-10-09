@@ -160,7 +160,7 @@ input, textarea{
     
 }
 
-.taskContent{
+/* .taskContent{
     font-weight: 200;
     
 }
@@ -172,15 +172,47 @@ input, textarea{
     padding: 2vh;
     margin: 1%;
     background-color: #ffffff;
-    font-weight: 600;
+    font-weight: 600; */
 
     /* definindo o tamanho maximo q uma tarefa poderá ter */
-    max-height: 50px;
+    /* max-height: 50px;
     min-width: 80px;
     overflow-y: auto;
 }
 .taskItem:hover{
     background-color: #ebd0d7b0;
     cursor: pointer;
-}
+} */
+.taskItem {
+    background-color: #ffffff;
+    border-radius: 3px;
+    box-shadow: 0 1px 0 rgba(9, 30, 66, 0.25);
+    margin-bottom: 8px;
+    padding: 8px;
+    max-height: 80px;
+    min-width: 80px;
+    overflow-y: auto;
+    position: relative;
+  }
+  
+  .taskContent {
+    font-size: 16px;
+  }
+  
+  .taskContent hr {
+    border: none;
+    border-top: 1px solid #ccc;
+    margin: 8px 0;
+  }
+  
+  /* Botao deletar tarefa */
+  .deleteButton{
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-radius: 10vh;
+    border: none;
+    background-color: transparent;
+  }
 
+  
