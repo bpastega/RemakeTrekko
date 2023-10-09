@@ -214,5 +214,9 @@ input, textarea{
     border: none;
     background-color: transparent;
   }
+  .deleteButton:hover{
+    cursor: pointer;
+    color: #FB6F92;
+  }
 
   
