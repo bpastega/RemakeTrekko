@@ -1,5 +1,6 @@
 /* fonts later */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Righteous&family=Sarala:wght@400;700&display=swap');
+
 header{
     width: 100%;
     height: 60px;
@@ -20,9 +21,13 @@ header{
     display: flex;
     align-items: center;
     /* justify-content: space-evenly; */
-    gap: 1100px;
+    gap: 800px;
  
 }
+/* .header-menu{
+    max-width: max-content;
+    max-height: fit-content;
+} */
 
 li{
     display: flex;
@@ -54,14 +59,14 @@ li{
 }
 
 .dropdown{
-    min-width: 130px;
+    min-width: 100px;
     padding: 15px 10px;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: right;
-    gap: 12px;
+    gap: 10px;
     position: absolute;
     top: 40px;
     border-radius: 8px;
@@ -70,8 +75,7 @@ li{
     opacity: 0;
     visibility: hidden;
     transition: 0.2s ease-in-out;
-
-    height: 70vh;
+    height: 90vh;
 }
 
 li:hover .dropdown{
@@ -111,6 +115,7 @@ li:hover .dropdown{
     font-family: 'Josefin Sans', sans-serif;
     display: flex;
     flex-direction: row;
+    /* max-width: 1024px; */
 }
 
 .column {
