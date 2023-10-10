@@ -21,7 +21,8 @@ header{
     display: flex;
     align-items: center;
     /* justify-content: space-evenly; */
-    gap: 800px;
+    gap: 980px;
+    /* empurrando a logo e o botaoMenucolors */
  
 }
 /* .header-menu{
@@ -57,6 +58,8 @@ li{
     color: #fafafa;
     font-size: 3.5vh;
 }
+/* .icon{
+} */
 
 .dropdown{
     min-width: 100px;
@@ -97,7 +100,7 @@ li:hover .dropdown{
 }
 .colorMenuButton{
     border-radius: 11px;
-    background-color: #fd90ad;
+    background-color: transparent;
     color: #FB6F92;
     color: #fafafa;
     border: none;
@@ -224,7 +227,7 @@ input, textarea{
     color: #FB6F92;
   }
 
-  .theme-toggler{
+  /* .theme-toggler{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -256,4 +259,4 @@ input, textarea{
 }
 .theme-toggler.active .toggler::before{
     left: 65px;
-}
+} */
