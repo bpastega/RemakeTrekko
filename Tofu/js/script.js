@@ -91,7 +91,7 @@ function addTask(columnId) {
     taskContent.appendChild(deleteButton);
     newTaskItem.appendChild(taskContent);
     document.getElementById(`${columnId}-task`).appendChild(newTaskItem);
-    saveTask();
+     saveTask(); //passando saveTask para o botao no html
 
     // newTaskItem.appendChild(document.createTextNode(taskText));  // why textnode?
     // document.getElementById(`${columnId}-task`).appendChild(newTaskItem);
@@ -138,22 +138,25 @@ function saveTask() {
     // }//fim da funçao loadTasks
     function loadTasks() {
         const savedTasks = JSON.parse(localStorage.getItem("tasks"));
+        //recuperando os dados armazenados em tasks no localStorage
       
+        //loop que percorre o savedTasks
         for (const columnId in savedTasks) {
           const column = document.getElementById(columnId);
-          const tasks = savedTasks[columnId];
+          const tasks = savedTasks[columnId]; // //recuperando a lista de tarefas
       
+          //verificando se é um array
           if (column && tasks && Array.isArray(tasks)) {
-            tasks.forEach(taskData => {
-              const taskElement = createTaskElement(taskData);
-              column.querySelector(".tasks").appendChild(taskElement);
+            tasks.forEach(taskData => { //loop para cada tarefa na lista
+              const taskElement = createTaskElement(taskData.name, taskData.description);
+              //chamando a funçao que vai criar um novo elemento tarefa com os dados taskData
+              column.querySelector(".tasks").appendChild(taskElement); 
             });
           }}}
           window.addEventListener("load", loadTasks);
-
 // mudar tema
 // let themeToggler = document.querySelector('.theme-toggler');
 
 // themeToggler.onclick = () =>{
 //     themeToggler.classList.toggle('active');
-// }
+// } //carregando a pagina
