@@ -1,23 +1,23 @@
 // document.getElementById("OpenColors").onclick = 
 
-function OpenMenu() { 
-    document.getElementById("colorMenu").style.display = "initial"; 
-} 
+function OpenMenu() {
+    document.getElementById("colorMenu").style.display = "initial";
+}
 
-/*Função para fechar o menu de cores*/ 
+/*Função para fechar o menu de cores*/
 // document.getElementById("x-symbol").onclick = 
 
-function CloseMenu() { 
-    document.getElementById("colorMenu").style.display = "none"; 
-} 
+function CloseMenu() {
+    document.getElementById("colorMenu").style.display = "none";
+}
 
 /*Função para mudar a cor do fundo*/
-function ChangeBG(cor){
+function ChangeBG(cor) {
     document.body.style.backgroundColor = cor;
 }
 
 // COLUNAS
-function createTaskElement(taskName, taskDescription){
+function createTaskElement(taskName, taskDescription) {
     const task = document.createElement('div');
     task.className = 'task';
     task.draggable = true;
@@ -42,76 +42,76 @@ function addTask(columnId) {
     const taskDescriptionIn = document.getElementById(`${columnId}-task-description`).value;
     // console.log(taskText)
 
-    if(taskText === ""){
+    if (taskText === "") {
         window.alert("Nenhuma tarefa inserida!");
         return;
     }
-    
 
-        const newTaskItem = document.createElement("li");
-        newTaskItem.className = "taskItem trello-card";
-    
 
-        const taskContent = document.createElement("div");
-        taskContent.className = "taskContent";
+    const newTaskItem = document.createElement("li");
+    newTaskItem.className = "taskItem trello-card";
 
-                    // METODO ANTERIOR A FUNÇAO SAVETASK
-        // taskContent.appendChild(document.createTextNode(taskText)); // Nome da tarefa
-        // taskContent.appendChild(document.createElement("hr")); // Quebra de linha
-        // taskContent.appendChild(document.createTextNode(taskDescriptionIn)); // Descrição da tarefa
-        // //function saveTask irá salvar as tarefas assim que adicionalas
 
-        const taskName = document.createElement("div");
-        taskName.className = "task-name";
-        taskName.appendChild(document.createTextNode(taskText));
-        taskContent.appendChild(taskName);
-        taskContent.appendChild(document.createElement("hr"));
-        //criando uma quebra de linha p ficar mais bonito
-        const taskDescription = document.createElement("div");
-        taskDescription.className = "task-description";
-        taskDescription.appendChild(document.createTextNode(taskDescriptionIn));
-        taskContent.appendChild(taskDescription);
-        // aqui esta adicionando as classes task-name e task-description que serão utilizadas no saveTask
+    const taskContent = document.createElement("div");
+    taskContent.className = "taskContent";
 
-        // excluir tarefa
-        const deleteButton = document.createElement("button");
-        // deleteButton.innerHTML = "delete";
-        deleteButton.className = "deleteButton";
+    // METODO ANTERIOR A FUNÇAO SAVETASK
+    // taskContent.appendChild(document.createTextNode(taskText)); // Nome da tarefa
+    // taskContent.appendChild(document.createElement("hr")); // Quebra de linha
+    // taskContent.appendChild(document.createTextNode(taskDescriptionIn)); // Descrição da tarefa
+    // //function saveTask irá salvar as tarefas assim que adicionalas
 
-        // adicionando o icon de lixeira
-        const icon = document.createElement("i");
-        icon.className = "ri-delete-bin-line";
-        deleteButton.appendChild(icon);
+    const taskName = document.createElement("div");
+    taskName.className = "task-name";
+    taskName.appendChild(document.createTextNode(taskText));
+    taskContent.appendChild(taskName);
+    taskContent.appendChild(document.createElement("hr"));
+    //criando uma quebra de linha p ficar mais bonito
+    const taskDescription = document.createElement("div");
+    taskDescription.className = "task-description";
+    taskDescription.appendChild(document.createTextNode(taskDescriptionIn));
+    taskContent.appendChild(taskDescription);
+    // aqui esta adicionando as classes task-name e task-description que serão utilizadas no saveTask
 
-        deleteButton.addEventListener("click", function() {
-            // quando o usuario clicar no X ira chamar a funçao excluir tarefa
-            newTaskItem.remove();
-        });
+    // excluir tarefa
+    const deleteButton = document.createElement("button");
+    // deleteButton.innerHTML = "delete";
+    deleteButton.className = "deleteButton";
 
-        taskContent.appendChild(deleteButton);
-        newTaskItem.appendChild(taskContent);
-        document.getElementById(`${columnId}-task`).appendChild(newTaskItem);
-        saveTask();
+    // adicionando o icon de lixeira
+    const icon = document.createElement("i");
+    icon.className = "ri-delete-bin-line";
+    deleteButton.appendChild(icon);
 
-        // newTaskItem.appendChild(document.createTextNode(taskText));  // why textnode?
-        // document.getElementById(`${columnId}-task`).appendChild(newTaskItem);
-         
+    deleteButton.addEventListener("click", function () {
+        // quando o usuario clicar no X ira chamar a funçao excluir tarefa
+        newTaskItem.remove();
+    });
+
+    taskContent.appendChild(deleteButton);
+    newTaskItem.appendChild(taskContent);
+    document.getElementById(`${columnId}-task`).appendChild(newTaskItem);
+    saveTask();
+
+    // newTaskItem.appendChild(document.createTextNode(taskText));  // why textnode?
+    // document.getElementById(`${columnId}-task`).appendChild(newTaskItem);
+
 }
 
-    function saveTask(){
-        const columns = document.querySelectorAll('.column');
-        console.log(columns)
-        const tasks = {};
+function saveTask() {
+    const columns = document.querySelectorAll('.column');
+    console.log(columns)
+    const tasks = {};
 
-        columns.forEach(column=>{
-            const columnId = column.id;
-            tasks[columnId] = [];
-            // console.log('===');
-            console.log(columnId);
-            const taskElements = column.querySelectorAll('.taskItem');
-            //elementos de tarefas foram criados com a classe taskItem
+    columns.forEach(column => {
+        const columnId = column.id;
+        tasks[columnId] = [];
+        // console.log('===');
+        console.log(columnId);
+        const taskElements = column.querySelectorAll('.taskItem');
+        //elementos de tarefas foram criados com a classe taskItem
 
-            taskElements.forEach(task=>{
+        taskElements.forEach(task => {
             const dataTask = {
                 name: task.querySelector('.task-name').innerText,
                 description: task.querySelector('.task-description').innerText
@@ -120,12 +120,37 @@ function addTask(columnId) {
         }); //fim do forEch tasks
 
         // console.log(dataTask );
-        }); //fim do forEch column
+    }); //fim do forEch column
 
 
-        localStorage.setItem("tasks", JSON.stringify(tasks));
+    localStorage.setItem("tasks", JSON.stringify(tasks));
 
-    } //fim da function saveTask
+} //fim da function saveTask
+
+    // function loadTasks (){
+    //     const savedTasks = JSON.parse(localStorage.getItem("tasks"));
+    //     //implementar (!savedTasks) para return
+    //     for (const columnId in savedTasks){
+    //         const column = document.getElementById(columnId);
+    //         const tasks = savedTasks[columnId]
+    //         //iterando as colunas existentes
+    //     }
+    // }//fim da funçao loadTasks
+    function loadTasks() {
+        const savedTasks = JSON.parse(localStorage.getItem("tasks"));
+      
+        for (const columnId in savedTasks) {
+          const column = document.getElementById(columnId);
+          const tasks = savedTasks[columnId];
+      
+          if (column && tasks && Array.isArray(tasks)) {
+            tasks.forEach(taskData => {
+              const taskElement = createTaskElement(taskData);
+              column.querySelector(".tasks").appendChild(taskElement);
+            });
+          }}}
+          window.addEventListener("load", loadTasks);
+
 // mudar tema
 // let themeToggler = document.querySelector('.theme-toggler');
 
