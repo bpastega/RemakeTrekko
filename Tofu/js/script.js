@@ -35,7 +35,6 @@ function createTaskElement(taskName, taskDescription){
     task.appendChild(taskDescriptionElement);
 
     return task;
-    //remove task 
 }
 // nao pode usar -
 function addTask(columnId) {
@@ -59,7 +58,9 @@ function addTask(columnId) {
         taskContent.appendChild(document.createTextNode(taskText)); // Nome da tarefa
         taskContent.appendChild(document.createElement("hr")); // Quebra de linha
         taskContent.appendChild(document.createTextNode(taskDescriptionIn)); // Descrição da tarefa
-       
+        //console.log(taskContent)
+        saveTask();
+
         // excluir tarefa
         const deleteButton = document.createElement("button");
         // deleteButton.innerHTML = "delete";
@@ -85,6 +86,39 @@ function addTask(columnId) {
          
 }
 
+    function saveTask(){
+        const columns = document.querySelectorAll('.column');
+        console.log(columns)
+        const tasks = {};
+
+        columns.forEach(column=>{
+            const columnId = column.id;
+            tasks[columnId] = [];
+            // console.log('===');
+            console.log(columnId);
+            const taskElements = column.querySelectorAll('.task');
+
+
+            taskElements.forEach(task=>{
+            const dataTask = {
+                name: task.querySelector('.task-name').innerText,
+                description: task.querySelector('.task-description').innerText
+            };
+            tasks[columnId.push](dataTask);
+        }); //fim do forEch tasks
+
+        // console.log(dataTask );
+        }); //fim do forEch column
+
+
+
+        // localStorage.setItem("tasks", JSON.stringify("column.id"));
+
+
+        // localStorage.setItem('todos', JSON.stringify("column.id"));
+
+
+    } //fim da function saveTask
 // mudar tema
 // let themeToggler = document.querySelector('.theme-toggler');
 

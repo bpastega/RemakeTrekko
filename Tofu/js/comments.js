@@ -72,4 +72,28 @@ function createTaskElement(taskName, taskDescription){
     //remove task 
 }
 
+
+AULA 10/10 TERÇA
+
+
+
+ADA LOVELACE - comentário feito.
+
+criar uma saveTask()
+ {"key":[value]}
+salvar as tasks -> localStorage
+ localStorage.setItem("chumimi");
+ adicionando novo item
+
+button onclick chamar a savetask()
+selecionar todas as colunas // querySelectorAll('.column')
+acessar o id -> column.id
+tasks[columnId] = []
+
+tasks[columnId.push](taskData);
+dar um console.log(taskData);
+
+localStorage("tasks", JSONstringify(tasks));
+
+
 */

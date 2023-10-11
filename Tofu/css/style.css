@@ -62,7 +62,7 @@ li{
 } */
 
 .dropdown{
-    min-width: 100px;
+    min-width: 90px;
     padding: 15px 10px;
     box-sizing: border-box;
     display: flex;
@@ -88,7 +88,7 @@ li:hover .dropdown{
 }
 
 .dropdown i{
-    font-size: 30px;
+    font-size: 25px;
     border-bottom: 1px solid #00000081;
     padding-top: 5px;
     text-decoration: none;
