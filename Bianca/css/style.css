@@ -46,7 +46,7 @@ font-family: 'DM Sans', sans-serif;*/
     color: #fafafa;
 }
 
-.toDoColumn, .doingColumn, .doneColumn{
+#toDoColumn, #doingColumn, #doneColumn{
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -58,8 +58,10 @@ font-family: 'DM Sans', sans-serif;*/
 
 .columns{
     display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
+    flex-direction: row; /*As colunas ficam dispostas em row*/
+    justify-content: space-evenly; 
+    /*Possivelmente ser mudado futuramente, por ora as colunas ficam separadas igualmente mas não
+    corresponde com o protótipo ou o Trello real*/
 }
 
 .colorMenu{
@@ -97,3 +99,4 @@ font-family: 'DM Sans', sans-serif;*/
 .colorMenuButton:hover{
     filter: brightness(95%);
 }
+/*Ao passar o mouse no menu de cor, o brilho é diminuido em 5%*/
