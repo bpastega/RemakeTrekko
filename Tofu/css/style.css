@@ -25,10 +25,7 @@ header{
     /* empurrando a logo e o botaoMenucolors */
  
 }
-/* .header-menu{
-    max-width: max-content;
-    max-height: fit-content;
-} */
+
 
 li{
     display: flex;
@@ -124,7 +121,6 @@ li:hover .dropdown{
 .column {
     display: flex;
     flex-direction: column;
-    /* align-items: center; */
     padding: 10px;
     margin: 10px;
     border: solid 1px #636363;
@@ -133,8 +129,8 @@ li:hover .dropdown{
     border-radius: 2vh;
     /* alinhando os titulos todo doing done no centro */
     text-align: center;
-    /* height: 300px;
-    overflow-y: auto; */
+    max-width: 200px; 
+    /* impedindo que a coluna se expanda no input */
 
 }
 .column-form{
@@ -146,6 +142,7 @@ li:hover .dropdown{
     gap: 10px;
     background-color: #fcfcfc;
     border-radius: 1vh;
+    max-width: 300px; 
 }
 input, textarea{
     border-radius: 0.5vh;
@@ -192,6 +189,17 @@ input, textarea{
     cursor: pointer;
 } */
 .taskItem {
+    background-color: #ffffff;
+    border-radius: 3px;
+    box-shadow: 0 1px 0 rgba(9, 30, 66, 0.25);
+    margin-bottom: 8px;
+    padding: 8px;
+    max-height: 50px;
+    min-width: 80px;
+    overflow-y: auto;
+    position: relative;
+  }
+  .task{
     background-color: #ffffff;
     border-radius: 3px;
     box-shadow: 0 1px 0 rgba(9, 30, 66, 0.25);

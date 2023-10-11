@@ -33,6 +33,13 @@ function createTaskElement(taskName, taskDescription) {
 
     task.appendChild(taskNameElement);
     task.appendChild(taskDescriptionElement);
+    //criando botao excluir tarefa que sera atribuido tanto ao criar quanto ao load
+    const deleteButton = document.createElement("button");
+    deleteButton.className = "deleteButton";
+    const icon = document.createElement("i");
+    icon.className = "ri-delete-bin-line";
+    deleteButton.appendChild(icon);
+    task.appendChild(deleteButton);
 
     return task;
 }
@@ -91,7 +98,7 @@ function addTask(columnId) {
     taskContent.appendChild(deleteButton);
     newTaskItem.appendChild(taskContent);
     document.getElementById(`${columnId}-task`).appendChild(newTaskItem);
-     saveTask(); //passando saveTask para o botao no html
+     saveTask(); //salvando a task
 
     // newTaskItem.appendChild(document.createTextNode(taskText));  // why textnode?
     // document.getElementById(`${columnId}-task`).appendChild(newTaskItem);
@@ -136,27 +143,47 @@ function saveTask() {
     //         //iterando as colunas existentes
     //     }
     // }//fim da funçao loadTasks
+    // function loadTasks() {
+    //     const savedTasks = JSON.parse(localStorage.getItem("tasks"));
+    //     //recuperando os dados armazenados em tasks no localStorage
+      
+    //     //loop que percorre o savedTasks
+    //     for (const columnId in savedTasks) {
+    //       const column = document.getElementById(columnId);
+    //       const tasks = savedTasks[columnId]; // //recuperando a lista de tarefas
+      
+    //       //verificando se é um array
+    //       if (column && tasks && Array.isArray(tasks)) {
+    //         tasks.forEach(taskData => { //loop para cada tarefa na lista
+    //           const taskElement = createTaskElement(taskData.name, taskData.description);
+    //           //chamando a funçao que vai criar um novo elemento tarefa com os dados taskData
+    //           column.querySelector(".tasks").appendChild(taskElement); 
+              
+              
+    //         });
+    //       }}}
+    //       window.addEventListener("load", loadTasks);
     function loadTasks() {
         const savedTasks = JSON.parse(localStorage.getItem("tasks"));
-        //recuperando os dados armazenados em tasks no localStorage
-      
-        //loop que percorre o savedTasks
+        
         for (const columnId in savedTasks) {
-          const column = document.getElementById(columnId);
-          const tasks = savedTasks[columnId]; // //recuperando a lista de tarefas
-      
-          //verificando se é um array
-          if (column && tasks && Array.isArray(tasks)) {
-            tasks.forEach(taskData => { //loop para cada tarefa na lista
-              const taskElement = createTaskElement(taskData.name, taskData.description);
-              //chamando a funçao que vai criar um novo elemento tarefa com os dados taskData
-              column.querySelector(".tasks").appendChild(taskElement); 
-            });
-          }}}
-          window.addEventListener("load", loadTasks);
-// mudar tema
-// let themeToggler = document.querySelector('.theme-toggler');
-
-// themeToggler.onclick = () =>{
-//     themeToggler.classList.toggle('active');
-// } //carregando a pagina
+            const column = document.getElementById(columnId);
+            const tasks = savedTasks[columnId];
+            
+            if (column && tasks && Array.isArray(tasks)) {
+                tasks.forEach(taskData => {
+                    const taskElement = createTaskElement(taskData.name, taskData.description);
+                    column.querySelector(".tasks").appendChild(taskElement);
+    
+                    // Adicionar funcionalidades à tarefa carregada, como excluir
+                    const deleteButton = taskElement.querySelector('.deleteButton');
+                    deleteButton.addEventListener("click", function () {
+                        taskElement.remove();
+                        saveTask(); // Chame a função saveTask após excluir a tarefa
+                    });
+                });
+            }
+        }
+    }
+    window.addEventListener("load", loadTasks);
+    
