@@ -34,12 +34,21 @@ function createTaskElement(taskName, taskDescription) {
     task.appendChild(taskNameElement);
     task.appendChild(taskDescriptionElement);
     //criando botao excluir tarefa que sera atribuido tanto ao criar quanto ao load
-    const deleteButton = document.createElement("button");
-    deleteButton.className = "deleteButton";
-    const icon = document.createElement("i");
-    icon.className = "ri-delete-bin-line";
-    deleteButton.appendChild(icon);
-    task.appendChild(deleteButton);
+
+        const deleteButton = document.createElement("button");
+        deleteButton.className = "deleteButton";
+        const icon = document.createElement("i");
+        icon.className = "ri-delete-bin-line";
+        deleteButton.appendChild(icon);
+        task.appendChild(deleteButton);
+    deleteButton.addEventListener("click", function () {
+        // quando o usuario clicar no X ira chamar a funçao excluir tarefa
+        task.remove();
+    });
+
+   
+
+
 
     return task;
 }
@@ -53,9 +62,14 @@ function addTask(columnId) {
         window.alert("Nenhuma tarefa inserida!");
         return;
     }
+    else{
+        const newTaskItem = createTaskElement(taskText, taskDescriptionIn);
+        document.getElementById(`${columnId}-task`).appendChild(newTaskItem); 
+        saveTask();
+    }
 
 
-    const newTaskItem = document.createElement("li");
+    /*const newTaskItem = document.createElement("li");
     newTaskItem.className = "taskItem trello-card";
 
 
@@ -99,15 +113,16 @@ function addTask(columnId) {
     newTaskItem.appendChild(taskContent);
     document.getElementById(`${columnId}-task`).appendChild(newTaskItem);
      saveTask(); //salvando a task
+     console.log(newTaskItem)
 
     // newTaskItem.appendChild(document.createTextNode(taskText));  // why textnode?
     // document.getElementById(`${columnId}-task`).appendChild(newTaskItem);
-
+*/
 }
 
 function saveTask() {
     const columns = document.querySelectorAll('.column');
-    console.log(columns)
+   console.log(localStorage)
     const tasks = {};
 
     columns.forEach(column => {
@@ -115,7 +130,7 @@ function saveTask() {
         tasks[columnId] = [];
         // console.log('===');
         console.log(columnId);
-        const taskElements = column.querySelectorAll('.taskItem');
+        const taskElements = column.querySelectorAll('.task');
         //elementos de tarefas foram criados com a classe taskItem
 
         taskElements.forEach(task => {
@@ -127,10 +142,10 @@ function saveTask() {
         }); //fim do forEch tasks
 
         // console.log(dataTask );
-    }); //fim do forEch column
+    }); //fim do forEach column
+    console.log(tasks);
 
-
-    localStorage.setItem("tasks", JSON.stringify(tasks));
+    localStorage.setItem('tasks', JSON.stringify(tasks));
 
 } //fim da function saveTask
 
@@ -166,24 +181,28 @@ function saveTask() {
     function loadTasks() {
         const savedTasks = JSON.parse(localStorage.getItem("tasks"));
         
-        for (const columnId in savedTasks) {
-            const column = document.getElementById(columnId);
-            const tasks = savedTasks[columnId];
-            
-            if (column && tasks && Array.isArray(tasks)) {
-                tasks.forEach(taskData => {
-                    const taskElement = createTaskElement(taskData.name, taskData.description);
-                    column.querySelector(".tasks").appendChild(taskElement);
-    
-                    // Adicionar funcionalidades à tarefa carregada, como excluir
-                    const deleteButton = taskElement.querySelector('.deleteButton');
-                    deleteButton.addEventListener("click", function () {
-                        taskElement.remove();
-                        saveTask(); // Chame a função saveTask após excluir a tarefa
+        //for (const columnId in savedTasks) 
+        if(savedTasks){
+            Object.keys(savedTasks).forEach((columnId)=>{
+                const column = document.getElementById(columnId);
+                const tasks = savedTasks[columnId];
+                
+
+                    tasks.forEach(taskData => {
+                        const taskElement = createTaskElement(taskData.name, taskData.description);
+                        column.querySelector(".tasks").appendChild(taskElement);
+        
+                        // Adicionar funcionalidades à tarefa carregada, como excluir
+                        /*const deleteButton = taskElement.querySelector('.deleteButton');
+                        deleteButton.addEventListener("click", function () {
+                            taskElement.remove();
+                            saveTask(); // Chame a função saveTask após excluir a tarefa
+                        });*/
                     });
-                });
-            }
+                
+            })
         }
     }
-    window.addEventListener("load", loadTasks);
+    
+    // window.addEventListener("load", loadTasks);
     

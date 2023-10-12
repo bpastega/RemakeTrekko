@@ -95,5 +95,34 @@ dar um console.log(taskData);
 
 localStorage("tasks", JSONstringify(tasks));
 
+AULA DIA 11/10/2024 QUARTA-FEIRA
+
+loadTask Gustavo Version
+
+adicionandar um listener no html entre <script>
+document.addEventListener("DOMContentLoaded", function()){
+
+});
+
+function loadTasks(){
+    const savedTasksJSON = localStorage.getItem('tasks');
+
+    if(savedTasks){
+        const tasks =JSONparse(savedTasksJSON);
+        console.log(taks)
+        console.log(Object.keys(taks))
+        Object.keys(tasks).forEach(columnId =>{
+            const column = document.getElementById(columnId);
+            const columnTasks = tasks[columnId];
+
+            columnTasks.forEach(tasksData =>{
+                console.log(taskData);
+                const task = createTaskElement(taskData.name, taskData.description);
+                columm.querySelector('.tasks').appendChild(tasks);
+            });
+        });
+    }
+
+}
 
 */
