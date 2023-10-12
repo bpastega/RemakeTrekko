@@ -125,4 +125,27 @@ function loadTasks(){
 
 }
 
+
+
+    bloco de codigo excluir tarefa
+    
+              // excluir tarefa
+            const deleteButton = document.createElement("button");
+            deleteButton.className = "deleteButton";
+
+            // adicionando o icon de lixeira
+            const icon = document.createElement("i");
+            icon.className = "ri-delete-bin-line";
+            deleteButton.appendChild(icon);
+
+            deleteButton.addEventListener("click", function () {
+                // quando o usuario clicar no X ira chamar a funçao excluir tarefa
+                newTaskItem.remove();
+            });
+
+            taskContent.appendChild(deleteButton);
+            newTaskItem.appendChild(taskContent);
+            document.getElementById(`${columnId}-task`).appendChild(newTaskItem);
+            saveTask(); //salvando a task
+            console.log(newTaskItem) 
 */

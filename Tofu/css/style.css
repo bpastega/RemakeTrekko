@@ -46,6 +46,7 @@ li{
 .menu li{
     text-decoration: none;
     color: #ffffff;
+    
 }
 .menu li:hover{
     text-decoration: none;
@@ -63,6 +64,7 @@ li{
 .menu i{
     color: #fafafa;
     font-size: 3.5vh;
+    
 }
 /* .icon{
 } */
@@ -98,11 +100,18 @@ li:hover .dropdown{
 }
 
 .dropdown i{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: co;
     font-size: 25px;
+    /* flex-wrap: wrap; */
+    /* border-bottom: 1px solid #00000081; */
     border-bottom: 1px solid #00000081;
     padding-top: 5px;
     text-decoration: none;
     cursor: pointer;
+    
 
 }
 .dropdown i:hover{
