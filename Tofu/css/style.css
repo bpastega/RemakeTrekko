@@ -172,7 +172,11 @@ li:hover .dropdown{
 }
 input, textarea{
     border-radius: 0.5vh;
+    font-family: 'Josefin Sans', sans-serif;
+    padding-left: 1vh;
+    padding: 0.5vh;
 }
+
 
 .column-content {
     display: flex;
