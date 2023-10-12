@@ -1,1 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remake Bianca Trekko</title>
+    <!-- Link para o css -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Link para o Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Yeseva+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300&display=swap" rel="stylesheet">
+    <!-- Link para o fontawesome kit -->
+    <script src="https://kit.fontawesome.com/0b76d30dd2.js" crossorigin="anonymous"></script>
+    <!-- Link para o Remixicon kit -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+    <body class="baseBody">
+        <header class="navbar">
+            <nav class="logoIcon">
+                <i class="ri-home-smile-line ri-xl"></i>
+                <h1 class="logo">Trekko</h1>
+            </nav>
+            <button class="colorMenuButton" id="OpenColors" onclick=""><i class="fa-solid fa-palette"></i></button>
+        </header>
 
+        <div class="board">
+            <!-- Coluna To Do -->
+            <div class="column-group">
+                <div class="column" id="toDoColumn">
+                    <div class="column-title">To do</div>
+                        <div class="column-items">
+                            <div class="task-input">
+                                <input type="text" class="taskTitle" placeholder="Título da tarefa"></input>
+                                <br>
+                                <input type="text" class="taskDescription" placeholder="Descrição da Tarefa"></input>
+                            </div>
+                            <div class="dropzone"></div>
+                        </div> 
+                        <button class="add-task-button" type="button">Adicionar</button>
+                </div>
+            <!-- Coluna Doing -->
+                <div class="column" id="doingColumn">
+                    <div class="column-title">Doing</div>
+                        <div class="column-items">
+                            <div class="task-input">
+                                <input type="text" class="taskTitle" placeholder="Título da tarefa"></input>
+                                <br>
+                                <input type="text" class="taskDescription" placeholder="Descrição da Tarefa"></input>
+                            </div>
+                            <div class="dropzone"></div>
+                        </div>
+                        <button class="add-task-button" type="button">Adicionar</button>
+                </div>
+            <!-- Coluna Done -->
+                <div class="column" id="doneColumn">
+                    <div class="column-title">Done</div>
+                        <div class="column-items">
+                            <div class="task-input">
+                                <input type="text" class="taskTitle" placeholder="Título da tarefa"></input>
+                                <br>
+                                <input type="text" class="taskDescription" placeholder="Descrição da Tarefa"></input>
+                            </div>
+                            <div class="dropzone"></div>
+                </div>
+                    <button class="add-task-button" type="button">Adicionar</button>
+                </div>
+        </div> <!-- fim da div column-group-->
+        </div><!-- fim da div board-->
+    
+        <div class="colorMenu" id="colorMenu"> <!--style="display: none;" o estilo é iniciado como 'none' para que o menu de cores não fique aberto quando o site carrega-->
+            <div class="colorlist">
+                    <div class="colorBox">
+                        <!-- https://coolors.co/palette/d8e2dc-ffe5d9-ffcad4-f4acb7-9d8189 -->
+                        <i class="ri-square-fill ri-3x"  style="color:#FFE5D9;" onclick="changeBG('#FFE5D9')"></i>
+                        <i class="ri-square-fill ri-3x"  style="color:#FFCAD4;" onclick="changeBG('#FFCAD4')"></i>
+                        <i class="ri-square-fill ri-3x"  style="color:#F4ACB7;" onclick="changeBG('#F4ACB7')"></i>
+                        <i class="ri-square-fill ri-3x"  style="color:#D8E2DC;" onclick="changeBG('#D8E2DC')"></i>
+                        <i class="ri-square-fill ri-3x"  style="color:#9D8189;" onclick="changeBG('#9D8189')"></i>
+                        <!-- https://coolors.co/palette/f08080-f4978e-f8ad9d-fbc4ab-ffdab9 -->
+                        <i class="ri-square-fill ri-3x"  style="color:#FFE5EC;" onclick="changeBG('#FFE5EC')"></i>
+                        <i class="ri-square-fill ri-3x"  style="color:#FFC2D1;" onclick="changeBG('#FFC2D1')"></i>
+                        <i class="ri-square-fill ri-3x"  style="color:#FFB3C6;" onclick="changeBG('#FFB3C6')"></i>
+                        <i class="ri-square-fill ri-3x"  style="color:#FF8FAB;" onclick="changeBG('#FF8FAB')"></i>
+                        <i class="ri-square-fill ri-3x"  style="color:#FB6F92;" onclick="changeBG('#FB6F92')"></i>
+                    </div>
+            </div>
+            <div class="closeSymbol">
+                <i class="fa-solid fa-xmark" id="x-symbol"></i> 
+            </div>
+    </div>
+
+        <script src="js/script.js" type="module"></script>
+    </body>
+</html>

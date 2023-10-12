@@ -7,10 +7,12 @@ font-family: 'DM Sans', sans-serif;*/
     padding: 0px;
 }
 
+
 .baseBody{
     background-color: #FFE5EC;
     margin: 0px; /*esse é o trecho que se livra da brecha que tinha entre a navbar e o topo da página*/
 }
+
 
 .logo{
     font-family: 'Josefin Sans', sans-serif;
@@ -26,15 +28,14 @@ font-family: 'DM Sans', sans-serif;*/
     border: none;
 }
 
-/*Barra de navegação que contém o logo, o ícone e o botão de menu de mudança de cor*/
 .navbar{
     background-color: #FFB3C6;
     display: flex;
     align-items: center;
     flex-direction: row;
     justify-content: center;
+    margin-bottom: 30px;
 }
-
 
 /*Grupo do logo e icon*/
 .logoIcon{
@@ -55,17 +56,16 @@ font-family: 'DM Sans', sans-serif;*/
     border-radius: 8px;
 }
 
-.taskTitle, .taskDescription{
-    display: flex;
-    flex-direction: column;    
-} 
-
-.columns{
+.column-group{
     display: flex;
     flex-direction: row; /*As colunas ficam dispostas em row*/
     justify-content: space-evenly; 
     /*Possivelmente ser mudado futuramente, por ora as colunas ficam separadas igualmente mas não
     corresponde com o protótipo ou o Trello real*/
+}
+
+.taskTitle, .taskDescription{
+    margin-bottom: 10px;
 }
 
 .colorMenu{
@@ -103,4 +103,3 @@ font-family: 'DM Sans', sans-serif;*/
 .colorMenuButton:hover{
     filter: brightness(95%);
 }
-/*Ao passar o mouse no menu de cor, o brilho é diminuido em 5%*/
