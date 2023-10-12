@@ -15,13 +15,15 @@
 
 <body>
     <header class="header-menu">
-        <ul class="menu">
-
+        <div class="first-element">
             <li><i class="ri-home-smile-line ri-xl"></i>
                 <h1>Trekko</h1>
             </li>
+        </div>
+        <ul class="menu">
           
-            <li><button class="colorMenuButton" id="OpenColors" onclick="">
+            <li>
+                <button class="colorMenuButton" id="OpenColors" onclick="">
                 <i class='bx bx-palette icon'></i>      
                     <div class="dropdown">
                         <h2>Pick a Color</h2>
@@ -36,8 +38,8 @@
                         <i class="ri-square-fill ri-3x" style="color:#FF8FAB;" onclick="ChangeBG('#FF8FAB')"></i>
                         <i class="ri-square-fill ri-3x" style="color:#FB6F92;" onclick="ChangeBG('#FB6F92')"></i>
                     </div>
-                             </button>
-                    </div>
+                </button>
+                    <!-- tirei a div que fecha daqui -->
             </li>
 
         </ul>
