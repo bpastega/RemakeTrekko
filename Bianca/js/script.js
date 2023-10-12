@@ -18,60 +18,36 @@ function closeMenu() {
 function changeBG(cor){
     document.body.style.backgroundColor = cor;
 }
+/*Função para*/
 
 
-/*SOFRIMENTO PURO. nada abaixo dá certo por algum motivo*/
+/*Função para adicionar nova tarefa, que recebe a ID do form coluna*/
 function addTask(column) {
-    let currentColumnID = column.id;
-    /*Differences between querySelector() and getElementById() -
-     (https://dev.to/colelevy/queryselector-vs-getelementbyid-166n#:~:text=getElementById()%20only%20works%20with,before%20returning%20the%20first%20match.)
-
-     "The main difference between these two functions is the way they select elements. getElementById() only works with ID attributes, while querySelector() 
-     can work with any CSS selector. Additionally, getElementById() is faster than querySelector() because it only needs to search for one element, whereas 
-     querySelector() may need to search for multiple elements before returning the first match." */
-
-    const taskTitle = document.getElementById(`${currentColumnID}-task-name`).value;
-    /*document.querySelector: retorna o primeiro elemento dentro do documento (usando ordenação em profundidade, pré-ordenada e transversal dos nós do documento) 
-    que corresponde ao grupo especificado de seletores.*/
-    const taskDescription = document.getElementById(`${currentColumnID}-task-description`).value;
-
-    console.log(taskTitle)
-    // Verifica se o título veio vazio
-    if (taskTitle.trim() === '') {
-        alert('Insira o título da tarefa.');
-        return;
-    };
-
-    /*Node: appendChild() method - https://developer.mozilla.org/pt-BR/docs/Web/API/Node/appendChild*/
-     // Cria um elemento para representar a nova tarefa
-     const newTaskItem = document.createElement('li');
-     newTaskItem.classList.add('task-item');  // Adiciona uma classe para estilização
- 
-     // Cria elementos para o título e descrição da tarefa
-     const taskTitleElement = document.createElement('h2');
-     taskTitleElement.textContent = taskTitle;
- 
-     const taskDescriptionElement = document.createElement('p');
-     taskDescriptionElement.textContent = taskDescriptionInput.value;
- 
-     // Adiciona os elementos de título e descrição ao item da tarefa
-     newTaskItem.appendChild(taskTitleElement);
-     newTaskItem.appendChild(taskDescriptionElement);
- 
-     // Adiciona a nova tarefa à lista correspondente
-
-     //caraio
-     const taskList = document.querySelector(`#taskList${column.id.charAt(0).toUpperCase() + column.id.slice(1)}`);
-     taskList.appendChild(newTaskItem);
- 
-     // Limpa os campos de entrada
-     taskTitleInput.value = '';
-     taskDescriptionInput.value = '';
-
-     column.push(task);
+    const newTaskTitle = document.getElementById(`${columnId}-task-title`).value;
+    const newTaskDescription = document.getElementById(`${columnId}-task-description`).value;
 
  }
  
+/*Função prof. Gustavo*/
+function loadTasks(){
+    const savedTasks = localStorage.getItem('tasks');
+    console.log(savedTasks);
+    if (savedTasks){
+        const tasks = JSON.parse(savedTasks);
+
+        Object.keys(tasks).forEach(columnId => {
+            const column = document.getElementById(columnId);
+            const columntasks = tasks(columnId);
+        });
+
+            columntasks.forEach(taskdata =>{
+                console.log(taskdata);
+                const task = createtaskelement(taskdata.name, taskdata.taskDescription);
+                column.querySelector('.tasks').appendChild(task);
+            }); 
+             
+    } 
+}
 
 /* 
 //Função para deslocar tarefa
