@@ -140,6 +140,7 @@ li:hover .dropdown{
     font-family: 'Josefin Sans', sans-serif;
     display: flex;
     flex-direction: row;
+    height: 80vh;
     /* max-width: 1024px; */
 }
 
@@ -211,6 +212,7 @@ input, textarea{
     min-width: 80px;
     overflow-y: auto;
     position: relative;
+    cursor: grabbing;
   }
   
   .taskContent {

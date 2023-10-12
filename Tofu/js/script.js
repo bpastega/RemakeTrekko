@@ -49,27 +49,7 @@ function createTaskElement(taskName, taskDescription) {
         saveTask();
     });
 
-         /*  // excluir tarefa
-            const deleteButton = document.createElement("button");
-            deleteButton.className = "deleteButton";
-
-            // adicionando o icon de lixeira
-            const icon = document.createElement("i");
-            icon.className = "ri-delete-bin-line";
-            deleteButton.appendChild(icon);
-
-            deleteButton.addEventListener("click", function () {
-                // quando o usuario clicar no X ira chamar a funçao excluir tarefa
-                newTaskItem.remove();
-            });
-
-            taskContent.appendChild(deleteButton);
-            newTaskItem.appendChild(taskContent);
-            document.getElementById(`${columnId}-task`).appendChild(newTaskItem);
-            saveTask(); //salvando a task
-            console.log(newTaskItem) */
-
-
+    
 
     return task;
 }
@@ -143,4 +123,34 @@ function saveTask() {
     }
     
 
+    //tentativa de aprender a usar drag e drop
+    function allowDrop(event) {
+        event.preventDefault();
+        const data = event.dataTransfer.getData("text");
+        const target = event.target;
+
+        if (target.classList.contains("tasks")) {
+            // Crie uma nova tarefa
+            const newTask = document.getElementById(data).cloneNode(true);
+            newTask.id = "task-" + Date.now(); // Crie um novo ID exclusivo para a tarefa
+            newTask.draggable = true;
+            newTask.ondragstart = drag;
+            newTask.ondrop = drop;
+            newTask.ondragover = allowDrop;
+        
+            // Adicione a nova tarefa ao destino
+            target.appendChild(newTask);
+          }
+    }
+    // por algun motivo so da pra arrastar e soltar a tarefa uma vez
+    function drag(event) {
+        event.dataTransfer.setData("text", event.target.id);
+    }
+    
+    function drop(event) {
+        event.preventDefault();
+        var data = event.dataTransfer.getData("text");
+        event.target.appendChild(document.getElementById(data));
+        saveTask();
+    }
     

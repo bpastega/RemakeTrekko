@@ -48,7 +48,8 @@
     <div class="container">
         <div class="column" id="to-do" ondrop="drop(event)" ondragover="allowDrop(event)">
             <h2>To do</h2>
-            <div id="todo-task" class="tasks" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <!-- permitindo que a task seja arrastada e solta -->
+            <div id="todo-task" class="tasks" draggable="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event) ">
             </div>
             <form class="column-form">
                 <label>Name</label>
@@ -64,7 +65,8 @@
 
         <div class="column" id="doing" ondrop="drop(event)" ondragover="allowDrop(event)">
             <h2>Doing</h2>
-            <div id="doing-task" class="tasks" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <!-- task sendo arrastada e solta -->
+            <div id="doing-task" class="tasks" draggable="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)">
             </div>
             <form class="column-form">
 
@@ -80,8 +82,8 @@
 
         <div class="column" id="done" ondrop="drop(event)" ondragover="allowDrop(event)">
             <h2>Done</h2>
-
-            <div id="done-task" class="tasks" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                <!-- task sendo arrastada e solta -->
+            <div id="done-task" class="tasks" draggable="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
             <form class="column-form">
                 <label for="done-task-name">Name</label>
                 <input type="text" id="done-task-name" placeholder="Add task title" required>
