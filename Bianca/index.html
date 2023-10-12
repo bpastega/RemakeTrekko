@@ -29,27 +29,32 @@
     <div class="columns">
         <form id="toDoColumn">
             <label class="columnTitle">A fazer</label>
-            <input type="text" class="taskTitle" placeholder="Título da tarefa"></input>
-            <textarea class="taskDescription" placeholder="Descrição da Tarefa"></textarea>
-            <button type="submit" class="submitButton" id="todoSubmit" onclick="addTask(toDo)">Adicionar</button>
+            <input type="text" class="taskTitle" id="newToDoTitle" placeholder="Título da tarefa"></input>
+            <textarea class="taskDescription" placeholder="Descrição da Tarefa" id="newtoDoDescription"></textarea>
+            <ul id="taskListToDo"></ul>
+            <button type="button-add" class="addButton" id="todoSubmit" onclick="addTask('toDoColumn')">Adicionar</button>
+
         </form>
 
         <form id="doingColumn">
             <label class="columnTitle">Fazendo</label>
-            <input type="text" class="taskTitle" placeholder="Título da tarefa"></input>
-            <textarea class="taskDescription" placeholder="Descrição da Tarefa"></textarea>
-            <button type="submit" class="submitButton" id="doingSubmit" onclick="addTask(doing)">Adicionar</button>
+            <input type="text" class="taskTitle" id="newDoingTitle" placeholder="Título da tarefa"></input>
+            <textarea class="taskDescription" placeholder="Descrição da Tarefa" id="newDoingDescription"></textarea>
+            <ul id="taskListDoing"></ul>
+            <button type="button-add" class="addButton" id="doingSubmit" onclick="addTask('doingColumn')">Adicionar</button>
         </form>
 
         <form id="doneColumn">
             <label class="columnTitle">Feito</label>
-            <input type="text" class="taskTitle" placeholder="Título da tarefa"></input>
-            <textarea class="taskDescription" placeholder="Descrição da Tarefa"></textarea>
-            <button type="submit" class="submitButton" id="doneSubmit" onclick="addTask(doing)">Adicionar</button>
+            <input type="text" class="taskTitle" id="newDoneTitle" placeholder="Título da tarefa"></input>
+            <textarea class="taskDescription" placeholder="Descrição da Tarefa" id="newDoneDescription"></textarea>
+            <ul id="taskListDone"></ul>
+            <button type="button-add" class="addButton" id="doneSubmit" onclick="addTask('doneColumn')">Adicionar</button>
+            
         </form>
     </div>
 
-    <div class="colorMenu" id="colorMenu" style="display: none;">
+    <div class="colorMenu" id="colorMenu" style="display: none;"> <!--o estilo é iniciado como 'none' para que o menu de cores não fique aberto quando o site carrega-->
             <div class="colorlist">
                     <div class="colorBox">
                         <!-- https://coolors.co/palette/d8e2dc-ffe5d9-ffcad4-f4acb7-9d8189 -->
@@ -71,7 +76,12 @@
             </div>
     </div>
 
-<script src="js/script.js"> 
-</script>
+<script src="js/script.js"> </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function(){
+            loadTasks();
+        });
+    </script>
 </body>
 </html>
