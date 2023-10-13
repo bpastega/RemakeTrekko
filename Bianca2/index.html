@@ -15,6 +15,7 @@
     <script src="https://kit.fontawesome.com/0b76d30dd2.js" crossorigin="anonymous"></script>
     <!-- Link para o Remixicon kit -->
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+
 </head>
     <body class="baseBody">
         <header class="navbar">
@@ -29,42 +30,42 @@
             <!-- Coluna To Do -->
             <div class="column-group">
                 <div class="column" id="toDoColumn">
-                    <div class="column-title">To do</div>
+                    <h3 class="column-title">To do</h3>
                         <div class="column-items">
                             <div class="task-input">
-                                <input type="text" class="taskTitle" placeholder="Título da tarefa"></input>
+                                <input type="text" class="taskTitle" placeholder="Título da tarefa" id="title-toDoColumn">
                                 <br>
-                                <input type="text" class="taskDescription" placeholder="Descrição da Tarefa"></input>
+                                <input type="text" class="taskDescription" placeholder="Descrição da Tarefa" id="desc-toDoColumn">
                             </div>
                             <div class="dropzone"></div>
                         </div> 
-                        <button class="add-task-button" type="button">Adicionar</button>
+                        <button class="add-task-button" type="button" onclick="addTask('toDoColumn')">Adicionar</button>
                 </div>
             <!-- Coluna Doing -->
                 <div class="column" id="doingColumn">
-                    <div class="column-title">Doing</div>
+                    <h3 class="column-title">Doing</h3>
                         <div class="column-items">
                             <div class="task-input">
-                                <input type="text" class="taskTitle" placeholder="Título da tarefa"></input>
+                                <input type="text" class="taskTitle" placeholder="Título da tarefa" id="title-doingColumn">
                                 <br>
-                                <input type="text" class="taskDescription" placeholder="Descrição da Tarefa"></input>
+                                <input type="text" class="taskDescription" placeholder="Descrição da Tarefa" id="desc-doingColumn">
                             </div>
                             <div class="dropzone"></div>
                         </div>
-                        <button class="add-task-button" type="button">Adicionar</button>
+                        <button class="add-task-button" type="button" onclick="addTask('doingColumn')">Adicionar</button>
                 </div>
             <!-- Coluna Done -->
                 <div class="column" id="doneColumn">
-                    <div class="column-title">Done</div>
+                    <h3 class="column-title">Done</h3>
                         <div class="column-items">
                             <div class="task-input">
-                                <input type="text" class="taskTitle" placeholder="Título da tarefa"></input>
+                                <input type="text" class="taskTitle" placeholder="Título da tarefa" id="title-doneColumn">
                                 <br>
-                                <input type="text" class="taskDescription" placeholder="Descrição da Tarefa"></input>
+                                <input type="text" class="taskDescription" placeholder="Descrição da Tarefa" id="desc-doneColumn">
                             </div>
                             <div class="dropzone"></div>
                 </div>
-                    <button class="add-task-button" type="button">Adicionar</button>
+                    <button class="add-task-button" type="button" onclick="addTask('doneColumn')">Adicionar</button>
                 </div>
         </div> <!-- fim da div column-group-->
         </div><!-- fim da div board-->
@@ -91,6 +92,6 @@
             </div>
     </div>
 
-        <script src="js/script.js" type="module"></script>
+    <script src="js/script.js" ></script>
     </body>
 </html>
