@@ -23,7 +23,6 @@ font-family: 'DM Sans', sans-serif;*/
     padding: 8px;
     background-color: #FFE5EC;
     color: #FB6F92;
-    color: color: #fafafa;
     margin: 0 660px; /*empurra o logo e o ícone */
     border: none;
 }
@@ -102,4 +101,10 @@ font-family: 'DM Sans', sans-serif;*/
 
 .colorMenuButton:hover{
     filter: brightness(95%);
+}
+
+.task{
+    border-radius: 8px;
+    background-color: #e6bec8;
+    margin-bottom: 8px;
 }

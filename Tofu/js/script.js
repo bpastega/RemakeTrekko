@@ -67,6 +67,9 @@ function addTask(columnId) {
         const newTaskItem = createTaskElement(taskText, taskDescriptionIn);
         document.getElementById(`${columnId}-task`).appendChild(newTaskItem); 
         saveTask();
+        //limpa os campos de input título e descrição depois da tarefa ser salva
+        document.getElementById(`${columnId}-task-name`).value = "";
+        document.getElementById(`${columnId}-task-description`).value = "";
     }
 
 }
