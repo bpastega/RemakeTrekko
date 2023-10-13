@@ -31,24 +31,31 @@
             <div class="column-group">
                 <div class="column" id="toDoColumn">
                     <h3 class="column-title">To do</h3>
-                        <div class="column-items">
-                            <div class="task-input">
-                                <input type="text" class="taskTitle" placeholder="Título da tarefa" id="title-toDoColumn">
-                                <br>
-                                <input type="text" class="taskDescription" placeholder="Descrição da Tarefa" id="desc-toDoColumn">
-                            </div>
-                            <div class="dropzone"></div>
-                        </div> 
-                        <button class="add-task-button" type="button" onclick="addTask('toDoColumn')">Adicionar</button>
+                    <!--Aqui são armazenadas as tarefas criadas -->
+                    <div class = "tasks" id="tasks-toDoColumn"></div>
+                    <!--Aqui ficam os elementos de input de novas tarefas -->
+                    <div class="column-items">
+                        <div class="task-input">
+                            <input type="text" class="taskTitle-input" placeholder="Título da tarefa" id="title-toDoColumn">
+                            <br>
+                            <input type="text" class="taskDescription-input" placeholder="Descrição da Tarefa" id="desc-toDoColumn">
+                        </div>
+
+                        <div class="dropzone"></div>
+                    </div> 
+                    <button class="add-task-button" type="button" onclick="addTask('toDoColumn')">Adicionar</button>
                 </div>
             <!-- Coluna Doing -->
                 <div class="column" id="doingColumn">
                     <h3 class="column-title">Doing</h3>
+                    <!--Aqui são armazenadas as tarefas criadas -->
+                    <div class="tasks" id="tasks-doingColumn"></div>
+                    <!--Aqui ficam os elementos de input de novas tarefas -->
                         <div class="column-items">
                             <div class="task-input">
-                                <input type="text" class="taskTitle" placeholder="Título da tarefa" id="title-doingColumn">
+                                <input type="text" class="taskTitle-input" placeholder="Título da tarefa" id="title-doingColumn">
                                 <br>
-                                <input type="text" class="taskDescription" placeholder="Descrição da Tarefa" id="desc-doingColumn">
+                                <input type="text" class="taskDescription-input" placeholder="Descrição da Tarefa" id="desc-doingColumn">
                             </div>
                             <div class="dropzone"></div>
                         </div>
@@ -57,11 +64,14 @@
             <!-- Coluna Done -->
                 <div class="column" id="doneColumn">
                     <h3 class="column-title">Done</h3>
+                    <!--Aqui são armazenadas as tarefas criadas -->
+                    <div class="tasks" id="tasks-doneColumn"></div>
+                    <!--Aqui ficam os elementos de input de novas tarefas -->
                         <div class="column-items">
                             <div class="task-input">
-                                <input type="text" class="taskTitle" placeholder="Título da tarefa" id="title-doneColumn">
+                                <input type="text" class="taskTitle-input" placeholder="Título da tarefa" id="title-doneColumn">
                                 <br>
-                                <input type="text" class="taskDescription" placeholder="Descrição da Tarefa" id="desc-doneColumn">
+                                <input type="text" class="taskDescription-input" placeholder="Descrição da Tarefa" id="desc-doneColumn">
                             </div>
                             <div class="dropzone"></div>
                 </div>

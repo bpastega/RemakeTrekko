@@ -14,30 +14,61 @@ function closeMenu() {
     document.getElementById("colorMenu").style.display = "none"; 
 } 
 
+/*Função para adicionar tarefa*/
 function addTask(columnId) {
-    // Get the title and description from the corresponding input fields
-    var titleInput = document.getElementById('title-' + columnId);
-    var descriptionInput = document.getElementById('desc-' + columnId);
+    // Pega o título e a descrição da tarefa dos campos input
+    let titleInput = document.getElementById('title-' + columnId);
+    let descriptionInput = document.getElementById('desc-' + columnId);
+    
+    //verifica se o campo de título está vazio
+    if (titleInput.value == ""){
+        alert("Insira um título para a tarefa!");
+        return;
+    }
 
-    var title = titleInput.value;
-    var description = descriptionInput.value;
+    //guarda os valores dos campos de título e descrição em variáveis
+    let title = titleInput.value;
+    let description = descriptionInput.value;
 
-    // Do something with the title and description (e.g., create a new task)
+    // Printa no log os valores dos campos de título e descrição
     console.log('Title:', title);
     console.log('Description:', description);
+
+    // Guarda a tarefa criada na função buildTaskBase em uma variável
+    let createdtask = buildTaskBase(title, description);
+    console.log('createdtask:', createdtask);
+    document.getElementById('tasks-' + columnId).appendChild(createdtask);
+    //saveTask();
 }
 
-/*
-function readTasks(){
-    const json = localStorage.getItem("tasks-data");
-    if(!json){
-        return[
+/*Função para construção da base da tarefa, dentro de 'task'*/
+function buildTaskBase(taskTitle, taskDesc) {
+    //Cria a tarefa
+    let task = document.createElement('div');
+    task.className = 'task';
+    task.id = `task-${Date.now()}`;//copiado da tofu, eventualmente procurar alternativas para o Date.now()
+    console.log('File name:', task.id);
 
-        ]
+    //Cria o slot que contém o título da tarefa
+    let taskTitleSlot = document.createElement('div');
+    taskTitleSlot.className = 'task-title';
+    taskTitleSlot.innerText = taskTitle;
 
-    }
+    //Cria o slot que contém a descrição da tarefa
+    let taskDescSlot = document.createElement('div');
+    taskDescSlot.className = 'task-desc';
+    taskDescSlot.innerText = taskDesc;
+
+    //Adiciona os slots à tarefa
+    task.appendChild(taskTitleSlot);
+    task.appendChild(taskDescSlot);
+
+    //TO DO:: Criar função separada para criação de botão de excluir tarefa*/
+
+    return task;//retorna task recém construída para uso dentro da função addTask	
 }
-*/
+
+/*Função para salvar tarefas criadas*/
 
 /*Função prof. Gustavo
 function loadTasks(){
