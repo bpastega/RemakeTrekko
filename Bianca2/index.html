@@ -27,8 +27,9 @@
         </header>
 
         <div class="board">
-            <!-- Coluna To Do -->
+            <!-- Grupo contendo todas as Colunas -->
             <div class="column-group">
+                <!-- Coluna To Do -->
                 <div class="column" id="toDoColumn">
                     <h3 class="column-title">To do</h3>
                     <!--Aqui são armazenadas as tarefas criadas -->
@@ -40,12 +41,12 @@
                             <br>
                             <input type="text" class="taskDescription-input" placeholder="Descrição da Tarefa" id="desc-toDoColumn">
                         </div>
-
+                        <!--Vi em uma videoaula o conceito de uma dropzone, futuramente planejo usá-la durante o movimento de tarefas entre colunas-->
                         <div class="dropzone"></div>
                     </div> 
                     <button class="add-task-button" type="button" onclick="addTask('toDoColumn')">Adicionar</button>
                 </div>
-            <!-- Coluna Doing -->
+                <!-- Coluna Doing -->
                 <div class="column" id="doingColumn">
                     <h3 class="column-title">Doing</h3>
                     <!--Aqui são armazenadas as tarefas criadas -->
@@ -61,7 +62,7 @@
                         </div>
                         <button class="add-task-button" type="button" onclick="addTask('doingColumn')">Adicionar</button>
                 </div>
-            <!-- Coluna Done -->
+                <!-- Coluna Done -->
                 <div class="column" id="doneColumn">
                     <h3 class="column-title">Done</h3>
                     <!--Aqui são armazenadas as tarefas criadas -->
@@ -77,12 +78,12 @@
                 </div>
                     <button class="add-task-button" type="button" onclick="addTask('doneColumn')">Adicionar</button>
                 </div>
-        </div> <!-- fim da div column-group-->
+            </div> <!-- fim da div column-group-->
         </div><!-- fim da div board-->
     
         <div class="colorMenu" id="colorMenu"> <!--style="display: none;" o estilo é iniciado como 'none' para que o menu de cores não fique aberto quando o site carrega-->
             <div class="colorlist">
-                    <div class="colorBox">
+                    <div class="colorBox"> <!-- Cores provisórias-->
                         <!-- https://coolors.co/palette/d8e2dc-ffe5d9-ffcad4-f4acb7-9d8189 -->
                         <i class="ri-square-fill ri-3x"  style="color:#FFE5D9;" onclick="changeBG('#FFE5D9')"></i>
                         <i class="ri-square-fill ri-3x"  style="color:#FFCAD4;" onclick="changeBG('#FFCAD4')"></i>
@@ -97,7 +98,7 @@
                         <i class="ri-square-fill ri-3x"  style="color:#FB6F92;" onclick="changeBG('#FB6F92')"></i>
                     </div>
             </div>
-            <div class="closeSymbol">
+            <div class="closeSymbol"> <!-- Botão para fechar o menu de cores -->
                 <i class="fa-solid fa-xmark" id="x-symbol"></i> 
             </div>
     </div>

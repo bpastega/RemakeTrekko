@@ -46,7 +46,9 @@ function addTask(columnId) {
     //saveTask();
 
     //limpa os campos de título e descrição
-    //considerei usar input type reset, mas     
+    /*considerei usar input type reset, mas a documentação pareceu fortemenete sugerir contra 
+    https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/reset*/
+
     document.getElementById('title-' + columnId).value = "";
     document.getElementById('desc-' + columnId).value = "";
 }
@@ -97,6 +99,10 @@ function saveTask(){
             tasks[currentColumnId] = [];
 
             let completeTaskTitle = column.querySelectorAll('.task-title');
+
+            let completeTaskDesc = column.querySelectorAll('.task-desc');
+
+            //CONTINUAR AQUI
         });
 
 }
@@ -105,7 +111,13 @@ function saveTask(){
 function deleteTask(){
 
 }
+/*Função para carregar tarefas salvas*/
 
+function loadTasks(){
+
+
+    
+}
 /*Função para carregar tarefas salvas*/
 /*Função prof. Gustavo
 function loadTasks(){

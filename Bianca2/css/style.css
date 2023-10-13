@@ -108,3 +108,11 @@ font-family: 'DM Sans', sans-serif;*/
     background-color: #e6bec8;
     margin-bottom: 8px;
 }
+
+.add-task-button{
+    color: #fafafa;
+    background-color: #FB6F92;
+    border-radius: 8px;
+    margin-top: 8px;
+    padding: 3px;
+}
