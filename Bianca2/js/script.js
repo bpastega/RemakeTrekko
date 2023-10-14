@@ -17,6 +17,7 @@ function closeMenu() {
 /*Função para mudar a cor do fundo*/
 function changeBG(cor){
     document.body.style.backgroundColor = cor;
+    saveColor()
 }
 
 /*Função para adicionar tarefa*/
@@ -43,7 +44,7 @@ function addTask(columnId) {
     let createdtask = buildTaskBase(title, description);
     console.log('createdtask:', createdtask);
     document.getElementById('tasks-' + columnId).appendChild(createdtask);
-    //saveTask();
+    saveTask(); //antes estava comentado, após implementação da função saveTask, fica como parte do código
 
     //limpa os campos de título e descrição
     /*considerei usar input type reset, mas a documentação pareceu fortemenete sugerir contra 
@@ -89,37 +90,77 @@ function saveTask(){
      let complete_columns = document.querySelectorAll('.column');
 
      //cria um objeto vazio chamado 'tasks'
-    let tasks = {};;
+    let tasks = {};
         // Array.prototype.forEach() - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach
-
         complete_columns.forEach(column => { //lembra o for do C
 
             //Manipula as colunas para pegar o id de cada uma
             let currentColumnId = column.id;
             tasks[currentColumnId] = [];
+            console.log('ID coluna', currentColumnId);//printa o id de cada coluna
 
+            //Pega todas as tarefas de cada coluna
+            let completeTasks = column.querySelectorAll('.task');
+            console.log('Tarefas:', completeTasks);
+
+            completeTasks.forEach(task => {
+                let taskInfo = {//pega as informações da tarefa, título e descrição
+                    taskname: task.querySelector('.task-title').innerText,
+                    taskdesc:  task.querySelector('.task-desc').innerText
+                };
+                tasks[currentColumnId].push(taskInfo);//adiciona as tarefas ao objeto 'tasks' da coluna atual
+            });
+            /* Código antigo - REFATORADO
+            //Pega todos os títulos de tarefa
             let completeTaskTitle = column.querySelectorAll('.task-title');
-
+            //Pega todos as descrições de tarefa
             let completeTaskDesc = column.querySelectorAll('.task-desc');
-
-            //CONTINUAR AQUI
+            */
         });
-
-}
+        localStorage.setItem('task-log', JSON.stringify(tasks));   
+}//fim da função saveTask
 
 /*Função para excluir tarefa*/
 function deleteTask(){
 
+
 }
 /*Função para carregar tarefas salvas*/
-
 function loadTasks(){
-
-
-    
+    let savedTasks = localStorage.getItem('task-log');
+        if (savedTasks){
+            let tasks = JSON.parse(savedTasks);
+            //Object.keys() - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys
+            Object.keys(tasks).forEach(columnId => {
+                let column = document.getElementById(columnId);
+                let columnTasks = tasks[columnId];
+                console.log('Coluna:', column);
+                console.log('Tarefas:', columnTasks);
+                    columnTasks.forEach(taskData => {
+                        let taskElement = buildTaskBase(taskData.taskname, taskData.taskdesc);
+                        column.querySelector('.tasks').appendChild(taskElement);
+                    });
+            });
+        }
 }
-/*Função para carregar tarefas salvas*/
-/*Função prof. Gustavo
+
+/* Função para o site carregar a última cor de fundo selecionada pelo usuário */
+function loadColor() {
+    let color = JSON.parse(localStorage.getItem('color-log'));//guarda o color-log em uma variável
+    if (color) {
+        document.body.style.backgroundColor = color;//se existe cor salva no color-log, ela é aplicada
+    }
+}
+
+/* Função para salvar a última cor de fundo selecionada pelo usuário */
+function saveColor() {
+    let currentColor = document.body.style.backgroundColor;//guarda a cor atual em uma variável
+    if (currentColor) {
+        localStorage.setItem('color-log', JSON.stringify(currentColor));//converte a cor atual em uma string dentro do JSON color-log
+    }
+}
+
+/*Função Explicada em Sala:: prof. Gustavo
 function loadTasks(){
     const savedTasks = localStorage.getItem('tasks');
     console.log(savedTasks);
@@ -136,7 +177,6 @@ function loadTasks(){
                 const task = createtaskelement(taskdata.name, taskdata.taskDescription);
                 column.querySelector('.tasks').appendChild(task);
             }); 
-             
     } 
 }
 */
@@ -159,7 +199,7 @@ function loadTasks(){
 
         É chamado através do botão adicionar, criando o task element e persistindo no localStorage
 
-    ♣️ CreateTaskElement(name, description) 
+    ♣️ CreateTaskElement(name, description) -- Nosso equivalente:: buildTaskBase
 
         Cria o elemento html para injetar na coluna dinâmicamente
 
@@ -175,8 +215,7 @@ Ao implementar o html e as funcionalidades elencadas, no sistema será possível
         ✔ alterar a cor do background, 
         ✔ adicionar tarefas, 
         ✔ mostrar as tarefas e
-        ✘ ((PENDING)) carregar todas as tarefas ao dar refresh na página
-
+        ✔ carregar todas as tarefas ao dar refresh na página
 
 A entrega do código é individual através do git, podendo ser elaborada em grupo ou também individualmente.
 */

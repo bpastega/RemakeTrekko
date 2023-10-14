@@ -110,9 +110,14 @@ font-family: 'DM Sans', sans-serif;*/
 }
 
 .add-task-button{
-    color: #fafafa;
-    background-color: #FB6F92;
-    border-radius: 8px;
     margin-top: 8px;
+    padding: 3px;
+}
+.task-title{
+    /*Arredonda apenas a parte de cima do título da tarefa*/
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    background-color: #f79cb1;
+    color: #fafafa;
     padding: 3px;
 }
