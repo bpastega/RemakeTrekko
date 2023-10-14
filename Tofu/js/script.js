@@ -14,6 +14,18 @@ function CloseMenu() {
 /*Função para mudar a cor do fundo*/
 function ChangeBG(cor) {
     document.body.style.backgroundColor = cor;
+    saveColor(cor)
+}
+function loadColor() {
+    let color = localStorage.getItem('color-log');
+    if (color) {
+        document.body.style.backgroundColor = color;
+    }
+}
+//funçao para salvar a cor
+
+function saveColor(cor) {
+    localStorage.setItem('color-log', cor);
 }
 
 // COLUNAS
@@ -156,4 +168,7 @@ function saveTask() {
         event.target.appendChild(document.getElementById(data));
         saveTask();
     }
+
+    
+    
     
