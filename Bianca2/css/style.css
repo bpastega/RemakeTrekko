@@ -5,12 +5,16 @@ font-family: 'DM Sans', sans-serif;*/
 *{
     font-family: 'DM Sans', sans-serif;
     padding: 0px;
+    margin: 0;
+    /* box-sizing: border-box; */
+
 }
 
 
 .baseBody{
     background-color: #FFE5EC;
-    margin: 0px; /*esse é o trecho que se livra da brecha que tinha entre a navbar e o topo da página*/
+    /* margin: 0px;  */
+    /*esse é o trecho que se livra da brecha que tinha entre a navbar e o topo da página*/
 }
 
 
@@ -23,26 +27,42 @@ font-family: 'DM Sans', sans-serif;*/
     padding: 8px;
     background-color: #FFE5EC;
     color: #FB6F92;
-    margin: 0 660px; /*empurra o logo e o ícone */
+    /* margin: 0 660px; */
+    /*empurra o logo e o ícone */
     border: none;
 }
 
 .navbar{
+
+    height: 8vh;
+    padding: 0 40px;
+    /* box-sizing: border-box; */
+    font-family: 'Josefin Sans', sans-serif;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     background-color: #FFB3C6;
+    /* background-color: #FFB3C6;
     display: flex;
     align-items: center;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
     margin-bottom: 30px;
+    height: 8vh;
+    padding: 0 40px;
+    box-sizing: border-box; */
+
 }
 
 /*Grupo do logo e icon*/
 .logoIcon{
     display: flex;
     align-items: center;
-    justify-content: center;
-    margin: 0 660px;/*empurra o botão de cor*/
+    /* justify-content: space-between; */
+    /* margin: 0 660px; */
+    /*empurra o botão de cor*/
     color: #fafafa;
+    position: relative;
 }
 
 #toDoColumn, #doingColumn, #doneColumn{
