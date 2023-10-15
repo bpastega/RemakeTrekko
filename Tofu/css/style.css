@@ -64,10 +64,12 @@ li{
 .menu i{
     color: #fafafa;
     font-size: 3.5vh;
+    cursor: pointer;
     
 }
-/* .icon{
-} */
+.menu i:hover{
+    color: #f0467088;
+}
 
 .dropdown{
     min-width: 120px;
@@ -118,14 +120,15 @@ li:hover .dropdown{
     filter: brightness(80%);
 }
 .colorMenuButton{
-    position: relative; 
+    /* position: relative;  */
     /* why? */
     border-radius: 11px;
     background-color: transparent;
-    color: #FB6F92;
+    /* color: #FB6F92; */
     color: #fafafa;
     border: none;
 }
+
 
 .colors{
     display: flex;
