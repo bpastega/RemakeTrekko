@@ -112,9 +112,9 @@ font-family: 'DM Sans', sans-serif;*/
 
 .closeSymbol{
     color: #FB6F92;
-    position: relative;
-    left: 140px;
-    bottom: 270px;
+    position: fixed;
+    right: 15px;
+    top: 10px;
     display: flex;
     margin: 0;
 }
