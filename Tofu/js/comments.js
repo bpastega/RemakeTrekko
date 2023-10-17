@@ -148,4 +148,8 @@ function loadTasks(){
             document.getElementById(`${columnId}-task`).appendChild(newTaskItem);
             saveTask(); //salvando a task
             console.log(newTaskItem) 
+
+            17/10 TERÇA-FEIRA
+
+            
 */

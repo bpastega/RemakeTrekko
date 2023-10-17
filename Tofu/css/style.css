@@ -178,6 +178,7 @@ input, textarea{
     font-family: 'Josefin Sans', sans-serif;
     padding-left: 1vh;
     padding: 0.5vh;
+    border: 0.5px solid #636363;
 }
 
 
@@ -187,8 +188,10 @@ input, textarea{
 }
 
 .button-add {
-    border-radius: 16px;
-    cursor: pointer;
+    border-radius: 8px;
+    cursor: pointer; 
+    padding: 3px;
+    border: 0.5px solid #636363;
 
 }
 
