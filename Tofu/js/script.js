@@ -187,8 +187,8 @@ function myConfirmBox(message) {
     element.innerHTML = `<div class="box">
                             ${message}
                             <div>
-                                <button id="trueButton" class="btn green">Yes</button>
-                                <button id="falseButton" class="btn red">No</button>
+                                <button id="trueButton" class="btn yes">Yes</button>
+                                <button id="falseButton" class="btn no">No</button>
                             </div>
                         </div>`;
     document.body.appendChild(element);

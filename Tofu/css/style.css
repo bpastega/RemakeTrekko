@@ -282,18 +282,31 @@ input, textarea{
 }
 
 .btn {
+    font-family: 'Josefin Sans', sans-serif;
     width: 100px;
     border: none;
     border-radius: 5px;
     color: #020202;
     padding: 5px;
+    cursor: pointer;
 }
-.red {
+.btn:hover{
+    filter: brightness(110%);
+}
+.no {
     background: #fcdede;
 }
-.green {
+.yes {
     background: rgb(241, 91, 129);
 }
+#trueButton{
+    color: #f3f0f0;
+}
+
+#falseButton{
+    color: #636363;
+}
+
 
   /* .theme-toggler{
     display: flex;
