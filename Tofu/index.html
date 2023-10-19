@@ -104,6 +104,13 @@
         loadColor();
         // carregando as tasks e cor salvas
 });
+
+    addEventListener("offline", function(){
+        console.log('online');
+    });
+    addEventListener("online", function(){
+        console.log('offline');
+    });
 </script>
 
 </html>

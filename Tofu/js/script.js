@@ -55,16 +55,22 @@ function createTaskElement(taskName, taskDescription) {
         deleteButton.appendChild(icon);
         task.appendChild(deleteButton);
         deleteButton.addEventListener("click", function () {
-        // quando o usuario clicar no X ira chamar a funçao excluir tarefa
-       
-        task.remove(); //removendo a task
-        saveTask();
+        
+        const confirmRemove = myConfirmBox("Sure?").then(response=>{
+            if(response){
+                task.remove();
+                saveTask();
+            }
+        });
+        
     });
-
     
-
+    // task.addEventListener('dragstart', dragStart())
     return task;
 }
+
+
+
 // nao pode usar -
 function addTask(columnId) {
     const taskText = document.getElementById(`${columnId}-task-name`).value;
@@ -141,34 +147,65 @@ function saveTask() {
     //tentativa de aprender a usar drag e drop
     function allowDrop(event) {
         event.preventDefault();
-        const data = event.dataTransfer.getData("text");
-        const target = event.target;
-
-        if (target.classList.contains("tasks")) {
-            // Crie uma nova tarefa
-            const newTask = document.getElementById(data).cloneNode(true);
-            newTask.id = "task-" + Date.now(); // Crie um novo ID exclusivo para a tarefa
-            newTask.draggable = true;
-            newTask.ondragstart = drag;
-            newTask.ondrop = drop;
-            newTask.ondragover = allowDrop;
-        
-            // Adicione a nova tarefa ao destino
-            target.appendChild(newTask);
-          }
+        // nao fazer nada no drag
     }
     // por algun motivo so da pra arrastar e soltar a tarefa uma vez
     function drag(event) {
-        event.dataTransfer.setData("text", event.target.id);
+        event.dataTransfer.setData("text/plain", event.target.id);
     }
     
     function drop(event) {
         event.preventDefault();
-        var data = event.dataTransfer.getData("text");
+        var data = event.dataTransfer.getData("text/plain");
+        const draggedElement = document.getElementById(data);
+        let targetColumn = event.target;
         event.target.appendChild(document.getElementById(data));
-        saveTask();
+
+        // saveTask();
+        while(targetColumn && !targetColumn.classList.contains('column')){
+            targetColumn = targetColumn.parentElement;
+        }
+        if(targetColumn){
+            const newTask = createTaskElement(
+                draggedElement.querySelector('.task-name').innerText,
+                draggedElement.querySelector('.task-description').innerText
+
+            );
+            targetColumn.querySelector('.tasks').appendChild(newTask);
+            draggedElement.parentElement.removeChild(draggedElement);
+            saveTask();
+
+        
     }
+}
 
     
     
+function myConfirmBox(message) {
+    let element = document.createElement("div");
+    element.classList.add("box-background");
+    element.innerHTML = `<div class="box">
+                            ${message}
+                            <div>
+                                <button id="trueButton" class="btn green">Yes</button>
+                                <button id="falseButton" class="btn red">No</button>
+                            </div>
+                        </div>`;
+    document.body.appendChild(element);
+    return new Promise(function (resolve, reject) {
+        document.getElementById("trueButton").addEventListener("click", function () {
+            resolve(true);
+            document.body.removeChild(element);
+        });
+        document.getElementById("falseButton").addEventListener("click", function () {
+            resolve(false);
+            document.body.removeChild(element);
+        });
+    })
     
+}
+// document.getElementById("myButton").addEventListener("click", () => {
+//     myConfirmBox("nao funcionaaaa").then(response=>{
+//         console.log(response); 
+//     })
+// })

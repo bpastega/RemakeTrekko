@@ -151,5 +151,49 @@ function loadTasks(){
 
             17/10 TERÇA-FEIRA
 
+            remover a task cod
+
+            const removeTaskElement = document.createElement('div');
+            removeTaskElement.className ='removeTask';
+            removeTaskElement.innerHTML= 'icon entra aqui';
+            removeTaskElement.onclick = function (){
+                removeTask(task.id);
+            }
+
+            implementando a function
+
+            removeTask(){
+                const confirmRemove = confirm ("certeza?");
+                if(confirmRemove){
+                    const taskToRemove = document.getElementById(taskId);
+                    taskToRemove.parentElement.removeChild(taskToRemove);
+                    saveTasks();
+                }
+            }
+
+            dragStart
+
+
+            AULA 18/10/2023
+
+            const data = event.dataTransfer.getData("text/plain");
+            const draggedElement = document.getElementById(data);
+            let targetColumn - event.target;
+
+            while(targetColumn && !targetColumn.classList.contains('column)){
+                targetColumn = targetColumn.parentElement;
+            }
+
+            if(targetColumn){
+                const newTask = createTaskElement(
+                    draggedElement.querySelector('.task-name').innerText;
+                    draggedElement.querySelector('.task-description').innerText;
+
+                );
+                targetColumn.querySelector('.tasks).appendChild(newTask);
+                draggedElement.parentElement.removeChild(draggedElement);
+                saveTask();
+            }
+
             
 */
