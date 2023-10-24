@@ -178,7 +178,7 @@
     }
 }
 
-    /*POP-UP*/
+    /*POP-UP DE EXCLUSÃO*/
     
     // função para pop-up de confirmaçao de exclusão de tarefa
     function myConfirmBox(message) {

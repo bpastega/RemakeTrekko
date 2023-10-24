@@ -40,12 +40,13 @@
                         <i class="ri-square-fill ri-3x" style="color:#FB6F92;" onclick="ChangeBG('#FB6F92')"></i>
                     </div>
                 </button>
-                    <!-- tirei a div que fecha daqui -->
             </li>
 
         </ul>
     </header>
-    <!-- COLUMNS -->
+
+    <!-- COLUNAS -->
+
     <div class="container">
         <div class="column" id="to-do" ondrop="drop(event)" ondragover="allowDrop(event)">
             <h2>To do</h2>
@@ -102,7 +103,7 @@
     document.addEventListener("DOMContentLoaded", function(){
         loadTasks();
         loadColor();
-        // carregando as tasks e cor salvas
+        // carregando as tasks e cor salvas somente se o HTML estiver completo
 });
 
     addEventListener("offline", function(){

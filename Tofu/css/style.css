@@ -1,13 +1,15 @@
-/* fonts later */
+    /* Bibliotecas Importadas */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Righteous&family=Sarala:wght@400;700&display=swap');
+
+    /* Seletor Universal - Reset Global */
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    /* text-decoration: none; */
 }
+
+    /* Navbar que abrange Nome, Logo e Menu Dropdown */
 .header-menu{
-    /* width: 100%; */
     height: 8vh;
     padding: 0 40px;
     box-sizing: border-box;
@@ -21,20 +23,19 @@
     
     
 }
+    /* Elemento na Navbar que abrange o Icone e o Nome */
 .first-element{
     color: white;
 }
-
+    /* Menu de Cores em formato Lista Não Ordenada*/
 .menu{
     height: 8vh;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    /* justify-content: space-evenly; */
-    /* empurrando a logo e o botaoMenucolors */
  
 }
-
+     /* Cores do Menu em formato Item de Lista Não Ordenada */
 
 li{
     display: flex;
@@ -57,10 +58,12 @@ li{
     font-weight: 200;
     color: #ffffff;
 }
+    /* Texto "Pick a Color" no Menu de Cores */
 .menu h2{
     color: #363636;
     
 }
+    /* Icones de cada cor no Menu de Cores */
 .menu i{
     color: #fafafa;
     font-size: 3.5vh;
@@ -71,6 +74,7 @@ li{
     color: #f0467088;
 }
 
+    /* Dropdown do Menu de Cores */
 .dropdown{
     min-width: 120px;
     padding: 15px 10px;
@@ -100,15 +104,13 @@ li:hover .dropdown{
     /* apos passar mouse por cima do icone o menu de cores ira se movimentar a 8vh a direita */
     top: 40px;
 }
-
+    /* Icones no Dropdown */
 .dropdown i{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     flex-direction: co;
     font-size: 25px;
-    /* flex-wrap: wrap; */
-    /* border-bottom: 1px solid #00000081; */
     border-bottom: 1px solid #00000081;
     padding-top: 5px;
     text-decoration: none;
@@ -119,9 +121,8 @@ li:hover .dropdown{
 .dropdown i:hover{
     filter: brightness(80%);
 }
+    /* Botão dentro do Item de Lista do Menu */
 .colorMenuButton{
-    /* position: relative;  */
-    /* why? */
     border-radius: 11px;
     background-color: transparent;
     /* color: #FB6F92; */
@@ -139,14 +140,15 @@ li:hover .dropdown{
 }
 
 /* COLUNAS */
+
+    /*Estilos para a classe Container que abrange as colunas  */
 .container {
     font-family: 'Josefin Sans', sans-serif;
     display: flex;
     flex-direction: row;
     height: 60vh;
-    /* max-width: 1024px; */
 }
-
+    /* Estilos para Colunas */
 .column {
     display: flex;
     flex-direction: column;
@@ -162,6 +164,7 @@ li:hover .dropdown{
     /* impedindo que a coluna se expanda no input */
 
 }
+    /* Estilos para o formularios dentro de Colunas */
 .column-form{
     display: flex;
     flex-direction: column;
@@ -173,6 +176,7 @@ li:hover .dropdown{
     border-radius: 1vh;
     max-width: 300px; 
 }
+     /* Estilos para o inputs de Colunas */
 input, textarea{
     border-radius: 0.5vh;
     font-family: 'Josefin Sans', sans-serif;
@@ -181,12 +185,12 @@ input, textarea{
     border: 0.5px solid #636363;
 }
 
-
+     /* Estilos para o contéudo de Colunas */
 .column-content {
     display: flex;
     flex-direction: column;
 }
-
+     /* Estilos para o Botão Add Task */
 .button-add {
     border-radius: 8px;
     cursor: pointer; 
@@ -200,7 +204,7 @@ input, textarea{
     color: #fff;
     
 }
-
+    /* Estilos para o HTML para Tarefas gerado no JavaScript */
 .taskItem {
     background-color: #ffffff;
     border-radius: 3px;
@@ -248,7 +252,8 @@ input, textarea{
     cursor: pointer;
     color: #FB6F92;
   }
-  /* Sure? button */
+
+  /* Estilos para o fundo do Pop-up de exclusão */
   .box-background {
     background: rgba(0, 0, 0, 0.8);
     position: fixed;
@@ -256,12 +261,11 @@ input, textarea{
     height: 100%;
     top: 0;
     left: 0;
-
     display: flex;
     justify-content: center;
     align-items: center;
 }
-
+     /* Estilos para o conteúdo do Pop-up de exclusão */
 .box {
     width: 300px;
     height: 100px;
@@ -269,18 +273,17 @@ input, textarea{
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     font-family: sans-serif;
     font-weight: bold;
-
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     border-radius: 5px;
 }
-
+    /* Delimitando o Espaçamento entre os Botões */
 .box div {
     margin-top: 10px;
 }
-
+    /* Estilos para Botões Yes e No */
 .btn {
     font-family: 'Josefin Sans', sans-serif;
     width: 100px;
@@ -293,6 +296,7 @@ input, textarea{
 .btn:hover{
     filter: brightness(110%);
 }
+    /* Estilos personalizados para as opções */
 .no {
     background: #fcdede;
 }
@@ -306,38 +310,3 @@ input, textarea{
 #falseButton{
     color: #636363;
 }
-
-
-  /* .theme-toggler{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
- .theme-toggler span{
-    color:var(--light-color);
- } 
-.theme-toggler .toggler{
-    height: 40px;
-    width: 100px;
-    border-radius: 50px;
-    background:var(--light-bg);
-    position: relative;
-    cursor: pointer;
-    border:var(--border);
-    margin: 0 10px;
-
-}
-.theme-toggler .toggler::before{
-    content: '';
-    position: absolute;
-    top: 5px; left: 5px;
-    height: 28px;
-    width: 28px;
-    border-radius: 50%;
-    background: white;
-    transition: .2s linear;
-}
-.theme-toggler.active .toggler::before{
-    left: 65px;
-} */
