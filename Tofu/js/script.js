@@ -1,35 +1,37 @@
-// document.getElementById("OpenColors").onclick = 
 
-function OpenMenu() {
-    document.getElementById("colorMenu").style.display = "initial";
-}
+// function OpenMenu() {
+//     document.getElementById("colorMenu").style.display = "initial";
+// }
 
-/*Função para fechar o menu de cores*/
-// document.getElementById("x-symbol").onclick = 
+    /* MENU DE CORES */
 
-function CloseMenu() {
+    // função para fechar o menu de cores
+    function CloseMenu() {
     document.getElementById("colorMenu").style.display = "none";
 }
 
-/*Função para mudar a cor do fundo*/
-function ChangeBG(cor) {
+    // função para alterar a cor de fundo
+    function ChangeBG(cor) {
     document.body.style.backgroundColor = cor;
     saveColor(cor)
 }
-function loadColor() {
+
+    // função para carregar a cor previamente escolhida
+    function loadColor() {
     let color = localStorage.getItem('color-log');
     if (color) {
         document.body.style.backgroundColor = color;
     }
 }
-//funçao para salvar a cor
 
-function saveColor(cor) {
+    // função para salvar a cor escolhida
+    function saveColor(cor) {
     localStorage.setItem('color-log', cor);
 }
+    /* COLUNAS */
 
-// COLUNAS
-function createTaskElement(taskName, taskDescription) {
+    // função para criar um elemento HTML representando uma tarefa com o nome e descrição.
+    function createTaskElement(taskName, taskDescription) {
     const task = document.createElement('div');
     task.className = 'task';
     task.draggable = true;
@@ -65,14 +67,12 @@ function createTaskElement(taskName, taskDescription) {
         
     });
     
-    // task.addEventListener('dragstart', dragStart())
     return task;
 }
 
 
-
-// nao pode usar -
-function addTask(columnId) {
+    // funçao para adicionar uma nova tarefa a uma coluna especifica, recebe columnId como parâmetro para identificar a coluna.
+    function addTask(columnId) {
     const taskText = document.getElementById(`${columnId}-task-name`).value;
     const taskDescriptionIn = document.getElementById(`${columnId}-task-description`).value;
     // console.log(taskText)
@@ -91,10 +91,10 @@ function addTask(columnId) {
     }
 
 }
-
-function saveTask() {
+    // funçao para salvar o estado atual das tarefas no armazenamento local no navegador (localStorage).
+    function saveTask() {
     const columns = document.querySelectorAll('.column');
-   console.log(localStorage)
+    console.log(localStorage)
     const tasks = {};
 
     columns.forEach(column => {
@@ -121,7 +121,7 @@ function saveTask() {
 
 } //fim da function saveTask
 
-  
+    // função para carregar as tarefas salvas, restaurando o estado anterior do quadro somente quando todo o HTML é carregado.
     function loadTasks() {
         const savedTasks = JSON.parse(localStorage.getItem("tasks"));
         
@@ -144,16 +144,16 @@ function saveTask() {
     }
     
 
-    //tentativa de aprender a usar drag e drop
+    // funçao para permitir que um elemento seja solto em um local específico.
     function allowDrop(event) {
         event.preventDefault();
-        // nao fazer nada no drag
+        // para evitar o comportamento padrão do navegador em relação ao elemento arrastado. 
     }
-    // por algun motivo so da pra arrastar e soltar a tarefa uma vez
+    // funçao para iniciar a operação de arrastar e soltar para um elemento
     function drag(event) {
         event.dataTransfer.setData("text/plain", event.target.id);
     }
-    
+    // funçao para manipular a soltura de uma tarefa em uma área específica.
     function drop(event) {
         event.preventDefault();
         var data = event.dataTransfer.getData("text/plain");
@@ -161,7 +161,6 @@ function saveTask() {
         let targetColumn = event.target;
         event.target.appendChild(document.getElementById(data));
 
-        // saveTask();
         while(targetColumn && !targetColumn.classList.contains('column')){
             targetColumn = targetColumn.parentElement;
         }
@@ -179,9 +178,10 @@ function saveTask() {
     }
 }
 
+    /*POP-UP*/
     
-    
-function myConfirmBox(message) {
+    // função para pop-up de confirmaçao de exclusão de tarefa
+    function myConfirmBox(message) {
     let element = document.createElement("div");
     element.classList.add("box-background");
     element.innerHTML = `<div class="box">
@@ -204,8 +204,3 @@ function myConfirmBox(message) {
     })
     
 }
-// document.getElementById("myButton").addEventListener("click", () => {
-//     myConfirmBox("nao funcionaaaa").then(response=>{
-//         console.log(response); 
-//     })
-// })
