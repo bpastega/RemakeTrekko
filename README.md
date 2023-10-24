@@ -51,7 +51,7 @@ Este projeto é uma replicação simplificada da plataforma de gerenciamento de 
   </li>
   <li>Arrastar e Soltar
     <ul>
-      <li>Permite que elementos sejam soltos em áreas específicas, através da funçao "allowDrop", que permite que as colunas sejam 'dropáveis', "dragStart" para iniciar a operação de arrastar e soltar para um elemento e por fim, "drop" para manipular a soltura de um elemento arrastado em uma área específica.</li>
+      <li>Permite que elementos sejam soltos em áreas específicas, através da funçao "allowDrop", que permite que as colunas sejam 'dropáveis', "drag" para iniciar a operação de arrastar e soltar para um elemento e por fim, "drop" para manipular a soltura de um elemento arrastado em uma área específica.</li>
     </ul>
   </li>
   
